@@ -5,8 +5,9 @@
    --accent-color: #e2cca3;
    --accent-stroke-color: 160, 136, 91;
    --light-text-color: 197, 197, 197;
+   --content-width: 1920px;
 }
 
 * {
-   font-family: var(--font-libre-caslon);
+   font-family: var(--font-source-serif);
 }

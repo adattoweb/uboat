@@ -1,12 +1,11 @@
 import type { Metadata } from "next"
-import { Libre_Caslon_Text } from "next/font/google"
+import { Source_Serif_4 } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/UI/Header/Header"
 
-const LibreCaslon = Libre_Caslon_Text({
-   variable: "--font-libre-caslon",
-   subsets: ["latin"],
-   weight: ["400", "700"],
+const SourceSerif = Source_Serif_4({
+   variable: "--font-source-serif",
+   subsets: ["cyrillic", "latin"],
 })
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export default function RootLayout({
    children: React.ReactNode
 }>) {
    return (
-      <html lang="en" className={` ${LibreCaslon.variable} h-full antialiased`}>
+      <html lang="en" className={` ${SourceSerif.variable} h-full antialiased`}>
          <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D]">
             <Header />
             <main>{children}</main>

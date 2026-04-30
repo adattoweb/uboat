@@ -7,7 +7,7 @@ interface ItemProps extends React.PropsWithChildren {
 
 function Item({ href, children }: ItemProps) {
    return (
-      <Link className="text-white" href={href}>
+      <Link className="text-white font-normal" href={href}>
          {children}
       </Link>
    )
