@@ -9,8 +9,8 @@ export function Intro() {
                   SILENT. INVISIBLE. DEADLY
                </h4>
                <h2 className="text-8xl text-white font-semibold mb-4">THE LEGEND BENEATH</h2>
-               <p className="text-xl text-[rgb(var(--light-text-color))] font-normal mb-6">
-                  Explore the engineering, history and wartime legacy of Germany's U-boats that changed the course of
+               <p className="text-xl text-[rgba(var(--light-text-color),0.9)] font-normal mb-6">
+                  Explore the engineering, history and wartime legacy of Germany`s U-boats that changed the course of
                   naval warfare forever
                </p>
                <Button>

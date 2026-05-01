@@ -11,3 +11,10 @@
 * {
    font-family: var(--font-source-serif);
 }
+::selection {
+   background-color: rgb(var(--accent-stroke-color));
+}
+
+::-moz-selection {
+   background-color: rgb(var(--accent-stroke-color));
+}
