@@ -14,24 +14,17 @@
 }
 ::selection {
    background-color: rgb(var(--accent-stroke-color));
+   color: #fff;
 }
 
 ::-moz-selection {
    background-color: rgb(var(--accent-stroke-color));
+   color: #fff;
 }
 
 .center {
    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
-
-progress {
-   -webkit-appearance: none;
-   appearance: none;
-   background: #ffffff20;
-}
-
-progress::-webkit-progress-value,
-progress::-moz-progress-bar {
-   background: rgb(var(--accent-stroke-color));
-   border-radius: 4px;
+.text-gray-gradient {
+   @apply bg-gradient-to-b from-[#FFFFFF] to-[#9C9C9C] bg-clip-text text-transparent inline;
 }

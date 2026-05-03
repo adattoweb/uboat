@@ -15,26 +15,17 @@ export function LoadProgress({ setIsLoading }: ProgressProps) {
    useGSAP(() => {
       const tl = gsap.timeline({
          defaults: {
-            ease: "power1.inOut",
+            ease: "power2.inOut",
             onUpdate: () => {
                const percent = gsap.getProperty(progressRef.current, "width") as number
                percentRef.current!.textContent = `${Math.round(percent).toString().padStart(3, "0")}%`
             },
          },
       })
-
       tl.to(progressRef.current, {
-         width: "80%",
+         width: "95%",
          duration: 1,
       })
-      tl.to(
-         progressRef.current,
-         {
-            width: "95%",
-            duration: 1,
-         },
-         "+=0.5",
-      )
       tl.to(
          progressRef.current,
          {

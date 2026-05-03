@@ -9,7 +9,12 @@ export function Header() {
          <div className="w-[var(--content-width)] mx-auto flex">
             <h1 className="text-3xl font-medium text-white">{APP.NAME}</h1>
             <Navigation />
-            <Link className="p-2 border-white border-2 rounded-full ml-auto" href={APP.GITHUB} target="_blank">
+            <Link
+               className="p-2 border-white border-2 rounded-full ml-auto"
+               href={APP.GITHUB}
+               target="_blank"
+               draggable={false}
+            >
                <AnchorIcon width={28} height={28} className="fill-white" />
             </Link>
          </div>

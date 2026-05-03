@@ -8,17 +8,18 @@ import { LoadProgress } from "./LoadProgress"
 import { useGSAP } from "@gsap/react"
 
 export function LoadScreen() {
-   const [isEnded, setIsEnded] = useState(false)
-   const [isLoading, setIsLoading] = useState(true)
+   const [isEnded, setIsEnded] = useState(false) // default value: false
+   const [isLoading, setIsLoading] = useState(true) // default value: true
    const topRef = useRef<HTMLDivElement | null>(null)
    const bottomRef = useRef<HTMLDivElement | null>(null)
    const buttonRef = useRef<HTMLDivElement | null>(null)
 
    const handleClick = () => {
-      // const audio = new Audio("/sounds/whale.mp3")
-      // audio.volume = 0.4
-      // audio.play()
-      const tl = gsap.timeline()
+      const tl = gsap.timeline({
+         defaults: {
+            ease: "back.in(1.2)",
+         },
+      })
       tl.to(buttonRef.current, { display: "none", duration: 0 })
          .to(topRef.current, { y: "-100%", duration: 1 }, "+=0.5")
          .to(bottomRef.current, { y: "100%", duration: 1, onComplete: () => setIsEnded(true) }, "<")
