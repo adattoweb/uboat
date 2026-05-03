@@ -11,7 +11,7 @@ const Button = forwardRef<HTMLDivElement, ButtonProps>(({ className = "", childr
    return (
       <div
          ref={ref}
-         className={`${className} flex w-65 h-15 border-2 border-[rgba(var(--accent-stroke-color),0.9)] cursor-pointer hover:bg-[rgba(var(--accent-stroke-color),0.9)] hover:*:text-white ease duration-300 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}
+         className={`${className} flex w-65 h-15 border-2 border-[rgba(var(--accent-stroke-color),0.9)] cursor-pointer hover:bg-[rgba(var(--accent-stroke-color),0.9)] hover:*:text-white ease duration-300 backdrop-blur-sm`}
          onClick={onClick}
       >
          {children}

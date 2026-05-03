@@ -5,3 +5,9 @@
       linear-gradient(90deg, rgba(var(--accent-stroke-color), 0.05) 1px, transparent 1px);
    background-size: 40px 40px;
 }
+.tech-grid:first-child {
+   border-bottom: rgba(var(--accent-stroke-color), 0.9) 1px solid;
+}
+.tech-grid:last-child {
+   border-top: rgba(var(--accent-stroke-color), 0.9) 1px solid;
+}

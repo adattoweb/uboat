@@ -19,3 +19,19 @@
 ::-moz-selection {
    background-color: rgb(var(--accent-stroke-color));
 }
+
+.center {
+   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+progress {
+   -webkit-appearance: none;
+   appearance: none;
+   background: #ffffff20;
+}
+
+progress::-webkit-progress-value,
+progress::-moz-progress-bar {
+   background: rgb(var(--accent-stroke-color));
+   border-radius: 4px;
+}

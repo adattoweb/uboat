@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en" className={` ${SourceSerif.variable} h-full antialiased`}>
-         <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D]">
+         <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D] overflow-hidden">
             <Header />
             <main>{children}</main>
          </body>
