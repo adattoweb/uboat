@@ -21,7 +21,7 @@ export function LoadScreen() {
          },
       })
       tl.to(buttonRef.current, { display: "none", duration: 0 })
-         .to(topRef.current, { y: "-100%", duration: 1 }, "+=0.5")
+         .to(topRef.current, { y: "-100%", duration: 1 }, "+=0.25")
          .to(bottomRef.current, { y: "100%", duration: 1, onComplete: () => setIsEnded(true) }, "<")
    }
 

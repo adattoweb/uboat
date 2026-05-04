@@ -17,7 +17,7 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
             draggable={false}
          >
             <Icon className="icon h-8 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
-            <h4 className="mt-2.5 text-xl font-medium text-white">{title}</h4>
+            <h4 className="mt-1 text-xl font-medium text-white">{title}</h4>
             <p className="mt-1.5 text-light-gray text-base font-normal">{description}</p>
             <ArrowLongRightIcon className="mt-8 w-10 stroke-[rgba(var(--accent-stroke-color),0.9)]" />
          </Link>
