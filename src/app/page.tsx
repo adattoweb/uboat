@@ -1,6 +1,7 @@
 import { About } from "./components/About/About"
 import { Intro } from "./components/Intro/Intro"
 import { LoadScreen } from "./components/LoadScreen/LoadScreen"
+import { Submarines } from "./components/Submarines/Submarines"
 import { Technology } from "./components/Technology/Technology"
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
          <div className="relative bottom-25 flex flex-col items-center gap-8">
             <About />
             <Technology />
+            <Submarines />
          </div>
       </div>
    )

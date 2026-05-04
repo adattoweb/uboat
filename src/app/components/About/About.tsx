@@ -1,9 +1,9 @@
 import Link from "next/link"
-import { CardProps } from "./about.types"
+import { IAboutCard } from "@/types/about.types"
 import { about } from "@/constants/about"
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline"
 
-function Card({ title, description, Icon, href, image }: CardProps) {
+function Card({ title, description, Icon, href, image }: IAboutCard) {
    // first:-... для іконки субмарини, вона повинна по іншому відображатись, тому для неї особливий підхід. Враховуй це, коли будеш змінювати іконку ( ! )
    return (
       <li
@@ -18,7 +18,7 @@ function Card({ title, description, Icon, href, image }: CardProps) {
          >
             <Icon className="icon h-8 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
             <h4 className="mt-2.5 text-xl font-medium text-white">{title}</h4>
-            <p className="mt-1.5 text-base font-normal text-[rgba(var(--light-text-color),0.9)]">{description}</p>
+            <p className="mt-1.5 text-light-gray text-base font-normal">{description}</p>
             <ArrowLongRightIcon className="mt-8 w-10 stroke-[rgba(var(--accent-stroke-color),0.9)]" />
          </Link>
       </li>

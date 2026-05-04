@@ -1,8 +1,8 @@
-import { CardProps } from "@/app/components/About/about.types"
+import { IAboutCard } from "@/types/about.types"
 import { SubmarineIcon } from "@/UI/icons/Icons"
 import { Cog8ToothIcon, PhotoIcon, ClockIcon } from "@heroicons/react/24/outline"
 
-export const about: CardProps[] = [
+export const about: IAboutCard[] = [
    {
       title: "TYPES OF UBOATS",
       description: "Discover different classes of uboats and their technical specifications.",

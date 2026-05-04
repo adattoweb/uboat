@@ -8,7 +8,7 @@ import { LoadProgress } from "./LoadProgress"
 import { useGSAP } from "@gsap/react"
 
 export function LoadScreen() {
-   const [isEnded, setIsEnded] = useState(false) // default value: false
+   const [isEnded, setIsEnded] = useState(true) // default value: false
    const [isLoading, setIsLoading] = useState(true) // default value: true
    const topRef = useRef<HTMLDivElement | null>(null)
    const bottomRef = useRef<HTMLDivElement | null>(null)

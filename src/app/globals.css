@@ -28,3 +28,7 @@
 .text-gray-gradient {
    @apply bg-gradient-to-b from-[#FFFFFF] to-[#9C9C9C] bg-clip-text text-transparent inline;
 }
+
+.text-light-gray {
+   color: rgba(var(--light-text-color), 0.9);
+}
