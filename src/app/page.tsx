@@ -1,5 +1,6 @@
 import { About } from "./components/About/About"
 import { History } from "./components/History/History"
+import { Info } from "./components/Info/Info"
 import { Intro } from "./components/Intro/Intro"
 import { LoadScreen } from "./components/LoadScreen/LoadScreen"
 import { Submarines } from "./components/Submarines/Submarines"
@@ -15,6 +16,7 @@ export default function Home() {
             <Technology />
             <Submarines />
             <History />
+            <Info />
          </div>
       </div>
    )

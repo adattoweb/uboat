@@ -1,10 +1,10 @@
-import PersonCard from "../PersonCard"
+import PersonCard from "@/UI/PersonCard/PersonCard"
 
 import kretschmer from "@/assets/images/kretschmer.png"
 import u_23 from "@/assets/images/u-23.png"
 
 import Button from "@/UI/Button/Button"
-import styles from "../PersonCard.module.css"
+import styles from "@/UI/PersonCard/PersonCard.module.css"
 
 export function Kretschmer() {
    return (

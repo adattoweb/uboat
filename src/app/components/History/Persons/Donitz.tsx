@@ -1,10 +1,10 @@
-import PersonCard from "../PersonCard"
+import PersonCard from "@/UI/PersonCard/PersonCard"
 
 import donitz from "@/assets/images/donitz.png"
 import uboatInSea from "@/assets/images/uboat_in_sea.png"
 
 import Button from "@/UI/Button/Button"
-import styles from "../PersonCard.module.css"
+import styles from "@/UI/PersonCard/PersonCard.module.css"
 
 export function Donitz() {
    return (

@@ -32,3 +32,9 @@
 .text-light-gray {
    color: rgba(var(--light-text-color), 0.9);
 }
+
+.notfound {
+   display: grid;
+   grid-template: auto auto / repeat(2, minmax(100px, 1fr));
+   align-items: center;
+}
