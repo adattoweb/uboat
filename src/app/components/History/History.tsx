@@ -1,10 +1,11 @@
-import { PersonCard } from "./PersonCard"
+import { Donitz } from "./Persons/Donitz"
+import { Kretschmer } from "./Persons/Kretschmer"
 
 export function History() {
    return (
       <section className="w-[var(--content-width)] flex flex-col gap-8">
-         <PersonCard />
-         <PersonCard />
+         <Donitz />
+         <Kretschmer />
       </section>
    )
 }
