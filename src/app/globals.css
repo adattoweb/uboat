@@ -38,3 +38,13 @@
    grid-template: auto auto / repeat(2, minmax(100px, 1fr));
    align-items: center;
 }
+
+.move-in {
+   /* Взагалі, було б правильно це використовувати в gsap.fromTo, але оскільки були мигання, то цей підхід краще.  */
+   opacity: 0;
+   transform: translateY(-100);
+}
+
+.fade-in {
+   opacity: 0;
+}

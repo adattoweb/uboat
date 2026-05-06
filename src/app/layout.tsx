@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Source_Serif_4 } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/UI/Header/Header"
+import { Footer } from "@/UI/Footer/Footer"
 
 const SourceSerif = Source_Serif_4({
    variable: "--font-source-serif",
@@ -23,6 +24,7 @@ export default function RootLayout({
          <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D] overflow-hidden">
             <Header />
             <main>{children}</main>
+            <Footer />
          </body>
       </html>
    )
