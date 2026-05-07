@@ -4,37 +4,49 @@ import Button from "@/UI/Button/Button"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
+import { ROUTES } from "@/constants/routes"
 
 export default function Page() {
-   const square = useRef<HTMLDivElement | null>(null)
-
+   const container = useRef<HTMLDivElement | null>(null)
+   const header = useRef<HTMLHeadingElement | null>(null)
+   const text = useRef<HTMLParagraphElement | null>(null)
+   const button = useRef<HTMLButtonElement | null>(null)
    useGSAP(() => {
       const tl = gsap.timeline({
          defaults: {
-            duration: 1,
-            ease: "back.out(0.7)",
+            ease: "power3.out",
+            duration: 0.5,
          },
-         repeat: -1,
       })
-      tl.to(square.current, {
-         rotate: 90,
+      tl.to(header.current, {
+         y: 0,
+         opacity: 1,
       })
-      tl.to(square.current, {
-         borderRadius: 64,
-      })
-      tl.to(square.current, {
-         borderRadius: 16,
-      })
+         .to(
+            text.current,
+            {
+               y: 0,
+               opacity: 1,
+            },
+            "-=0.25",
+         )
+         .to(
+            button.current,
+            {
+               opacity: 1,
+            },
+            "+=0.5",
+         )
    })
-
    return (
-      <div className="notfound center gap-x-16 cursor-default">
-         <div ref={square} className="row-start-1 row-end-2 aspect-square bg-amber-50 rounded-2xl"></div>
-         <div className="self-start">
-            <h1 className="text-white text-9xl font-bold leading-26">404</h1>
-            <p className="text-white text-2xl font-medium">Page not found</p>
-         </div>
-         <Button href="/" className="mt-10 w-auto! col-start-1 col-end-3">
+      <div ref={container} className="flex flex-col center gap-2 py-8 px-14 border border-[var(--stroke-color)]">
+         <h1 ref={header} className="move-in text-white text-4xl font-medium">
+            404
+         </h1>
+         <p ref={text} className="move-in text-white text-2xl font-normal">
+            Oooops, page not found.
+         </p>
+         <Button ref={button} href={ROUTES.HOME.ROUTE} className="fade-in w-full mt-4">
             <Button.Text>RETURN TO MAIN</Button.Text>
          </Button>
       </div>

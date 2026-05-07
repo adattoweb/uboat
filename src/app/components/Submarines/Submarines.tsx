@@ -1,3 +1,5 @@
+"use client"
+
 import Button from "@/UI/Button/Button"
 import { submarines } from "@/constants/submarines"
 import { ISubmarineCard } from "@/types/submarines.types"
@@ -5,7 +7,7 @@ import Image from "next/image"
 
 function Card({ title, description, href, image }: ISubmarineCard) {
    return (
-      <div className="flex flex-col h-100 flex-1 border border-[var(--stroke-color)]">
+      <div id="types" className="flex flex-col h-100 flex-1 border border-[var(--stroke-color)]">
          <Image
             width={400}
             height={300}

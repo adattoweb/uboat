@@ -23,7 +23,7 @@ export default function RootLayout({
       <html lang="en" className={` ${SourceSerif.variable} h-full antialiased`}>
          <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D] overflow-hidden">
             <Header />
-            <main>{children}</main>
+            <main className="flex-1">{children}</main>
             <Footer />
          </body>
       </html>

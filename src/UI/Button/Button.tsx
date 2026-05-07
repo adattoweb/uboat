@@ -1,3 +1,5 @@
+"use client"
+
 import { WithClassName, WithClick } from "@/types/global"
 import Link from "next/link"
 import { forwardRef } from "react"
@@ -26,9 +28,9 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
       }
 
       return (
-         <button ref={ref as React.Ref<HTMLButtonElement>} className={classes} onClick={onClick} type="button">
+         <div ref={ref as React.Ref<HTMLDivElement>} className={classes} onClick={onClick}>
             {children}
-         </button>
+         </div>
       )
    },
 ) as ButtonComponent
