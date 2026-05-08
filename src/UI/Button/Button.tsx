@@ -1,5 +1,3 @@
-"use client"
-
 import { WithClassName, WithClick } from "@/types/global"
 import Link from "next/link"
 import { forwardRef } from "react"

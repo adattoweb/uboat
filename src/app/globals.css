@@ -32,6 +32,9 @@ html {
 .text-gray-gradient {
    @apply bg-gradient-to-b from-[#FFFFFF] to-[#9C9C9C] bg-clip-text text-transparent inline;
 }
+.gray-gradient {
+   @apply bg-gradient-to-b from-[#112732] to-[#061720];
+}
 
 .text-light-gray {
    color: rgba(var(--light-text-color), 0.9);

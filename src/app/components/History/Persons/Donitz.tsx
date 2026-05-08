@@ -17,7 +17,7 @@ export function Donitz() {
                Karl Dönitz led Germany’s U-boat fleet and made submarine warfare a central strategy in WWII. He
                introduced the “wolfpack” tactic, coordinating attacks on Allied convoys in the Atlantic.
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-10`}>
+            <Button className={`${styles.button} mt-10`} href="/donitz">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>
