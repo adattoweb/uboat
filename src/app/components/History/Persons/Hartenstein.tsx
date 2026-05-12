@@ -1,6 +1,9 @@
+"use client"
+
 import PersonCard from "@/UI/PersonCard/PersonCard"
 
 import laconia from "@/assets/images/laconia.jpg"
+import hartenstein from "@/assets/images/hartenstein.png"
 
 import Button from "@/UI/Button/Button"
 import styles from "@/UI/PersonCard/PersonCard.module.css"
@@ -8,7 +11,7 @@ import styles from "@/UI/PersonCard/PersonCard.module.css"
 export function Hartenstein() {
    return (
       <PersonCard>
-         <PersonCard.Portrait src={laconia.src} alt="Commander of U-156" />
+         <PersonCard.Portrait className="w-90 ml-10" src={hartenstein.src} alt="Commander of U-156" />
          <PersonCard.Text>
             <PersonCard.Introduction>Commander of U-156</PersonCard.Introduction>
             <PersonCard.Name>WERNER HARTENSTEIN</PersonCard.Name>

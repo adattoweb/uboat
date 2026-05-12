@@ -1,3 +1,5 @@
+"use client"
+
 import PersonCard from "@/UI/PersonCard/PersonCard"
 
 import kretschmer from "@/assets/images/kretschmer.png"

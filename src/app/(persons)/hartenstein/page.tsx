@@ -1,3 +1,5 @@
+"use client"
+
 import PersonCard from "@/UI/PersonCard/PersonCard"
 import Constructor from "../page.constructor"
 

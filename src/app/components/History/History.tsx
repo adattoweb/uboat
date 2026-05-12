@@ -1,3 +1,4 @@
+"use client"
 import { Donitz } from "./Persons/Donitz"
 import { Hartenstein } from "./Persons/Hartenstein"
 import { Kretschmer } from "./Persons/Kretschmer"
