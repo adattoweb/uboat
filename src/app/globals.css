@@ -9,9 +9,9 @@
    --background-color: #061720;
 }
 
-html {
+/* html {
    scroll-behavior: smooth;
-}
+} */
 
 * {
    font-family: var(--font-source-serif);
@@ -41,7 +41,7 @@ html {
 }
 
 .move-in {
-   /* Взагалі, було б правильно це використовувати в gsap.fromTo, але оскільки були мигання, то цей підхід краще.  */
+   /* Взагалі, було б правильно це використовувати в gsap.fromTo, але оскільки буде мигання, то цей підхід краще.  */
    opacity: 0;
    transform: translateY(-100);
 }

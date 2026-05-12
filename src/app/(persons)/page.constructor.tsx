@@ -6,21 +6,7 @@ interface ConstructorProps extends WithClassName {
 }
 
 function Constructor({ className, children }: ConstructorProps) {
-   return <div className={`${className} w-[var(--content-width)] mx-auto flex flex-col mt-30`}>{children}</div>
-}
-
-interface ImageProps extends WithClassName {
-   src: string
-   alt?: string
-}
-
-function Banner({ className, src }: ImageProps) {
-   return (
-      <div
-         style={{ backgroundImage: `url(${src})` }}
-         className={`${className} w-screen bg-cover absolute left-0 bg-no-repeat bg-center h-100`}
-      ></div>
-   )
+   return <div className={`${className} w-[var(--content-width)] mx-auto mt-40 `}>{children}</div>
 }
 
 interface ConstructorElement extends WithClassName {
@@ -30,13 +16,19 @@ interface ConstructorElement extends WithClassName {
 interface PictureProps {
    width: number
    height: number
-   className: string
+   className?: string
+   imageClassName?: string
    src: string
    alt: string
 }
 
-function Picture({ width, height, className, src, alt }: PictureProps) {
-   return <Image width={width} height={height} src={src} alt={alt} className={`${className}`} />
+function Picture({ width, height, className, imageClassName, src, alt }: PictureProps) {
+   return (
+      <div className={`${className} flex flex-col gap-2 text-lg`}>
+         <Image width={width} height={height} src={src} alt={alt} className={`${imageClassName}`} />
+         <p className="text-light-gray">{alt}</p>
+      </div>
+   )
 }
 
 function Header({ children, className }: ConstructorElement) {
@@ -47,10 +39,6 @@ function Parapgraph({ children, className }: ConstructorElement) {
    return <p className={`${className} text-light-gray text-lg font-normal mt-1`}>{children}</p>
 }
 
-function Gallery() {}
-
-Constructor.Banner = Banner
-Constructor.Gallery = Gallery
 Constructor.Picture = Picture
 Constructor.Header = Header
 Constructor.Paragraph = Parapgraph

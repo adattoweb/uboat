@@ -1,16 +1,41 @@
+"use client"
+
 import Image from "next/image"
 import eagle from "@/assets/images/eagle.png"
 
 import styles from "./PersonCard.module.css"
 import { WithClassName } from "@/types/global"
 
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { useRef } from "react"
+
 type CardProps = React.PropsWithChildren & WithClassName
 
 function PersonCard({ className = "", children }: CardProps) {
+   const container = useRef<HTMLDivElement | null>(null)
+   useGSAP(
+      () => {
+         const tl = gsap.timeline({
+            defaults: {
+               duration: 1,
+            },
+         })
+         tl.to(".portrait", {
+            opacity: 1,
+         }).to(`.${styles.eagle}`, {
+            opacity: 0.1,
+         })
+      },
+      { scope: container },
+   )
    return (
-      <section className={`${styles.card} ${className} flex w-full h-108 border border-[var(--stroke-color)] relative`}>
+      <section
+         ref={container}
+         className={`${styles.card} ${className} flex w-full h-108 border border-[var(--stroke-color)] relative`}
+      >
          <Image
-            className={`${styles.eagle} absolute opacity-10 mt-8 mb-auto w-80`}
+            className={`${styles.eagle} absolute opacity-0 mt-8 mb-auto w-80`}
             width={370}
             height={340}
             src={eagle.src}
@@ -32,7 +57,7 @@ type PortraitProps = WithClassName & {
 function Portrait({ className = "", width = 400, height = 500, src, alt }: PortraitProps) {
    return (
       <Image
-         className={`${styles.portrait} ${className} z-1 max-w-full h-max! block self-end`}
+         className={`${styles.portrait} ${className} portrait opacity-0 z-1 max-w-full h-max! block self-end`}
          width={width}
          height={height}
          src={src}

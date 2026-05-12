@@ -19,7 +19,7 @@ function FooterLink({ href, name }: LinkProps) {
 
 export function Footer() {
    return (
-      <footer className="flex w-[var(--content-width)] mx-auto p-8 border border-[var(--stroke-color)] gap-10">
+      <footer className="flex w-[var(--content-width)] mx-auto p-8 border border-[var(--stroke-color)] gap-10 mt-10">
          <div className="flex flex-col max-w-130">
             <h1 className="text-white text-3xl font-semibold">{APP.NAME}</h1>
             <p className="text-xl text-light-gray font-normal mt-1">HISTORY. TECHNOLOGY. LEGACY</p>

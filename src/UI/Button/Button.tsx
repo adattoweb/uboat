@@ -19,7 +19,13 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
 
       if (href) {
          return (
-            <Link href={href} ref={ref as React.Ref<HTMLAnchorElement>} className={classes} onClick={onClick}>
+            <Link
+               href={href}
+               ref={ref as React.Ref<HTMLAnchorElement>}
+               className={classes}
+               onClick={onClick}
+               scroll={true}
+            >
                {children}
             </Link>
          )

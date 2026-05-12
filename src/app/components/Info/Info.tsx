@@ -40,7 +40,7 @@ export function Info() {
          <Card header="> 400" title="YEARS" description="Of the U-boat history and evolution">
             <CalendarDaysIcon className="row-span-3 h-10 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
          </Card>
-         <Card header="> 20" title="PEOPLE" description="Died serving on submarines in WWII">
+         <Card header="> 20000" title="PEOPLE" description="Died serving on submarines in WWII">
             <UserIcon className="row-span-3 h-10 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
          </Card>
       </div>
