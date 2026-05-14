@@ -1,3 +1,4 @@
+import { DepthMeter } from "@/UI/DepthMetr/DepthMetr"
 import { About } from "./components/About/About"
 import { History } from "./components/History/History"
 import { Info } from "./components/Info/Info"
@@ -16,6 +17,7 @@ export default function Home() {
             <History />
             <Info />
          </div>
+         <DepthMeter />
       </div>
    )
 }
