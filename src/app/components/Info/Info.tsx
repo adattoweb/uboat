@@ -1,6 +1,12 @@
+"use client"
+
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+
 import { WithClassName } from "@/types/global"
 import { AnchorIcon, SubmarineIcon } from "@/UI/icons/Icons"
 import { CalendarDaysIcon, FlagIcon, UserIcon } from "@heroicons/react/24/outline"
+import { useRef } from "react"
 
 // fill-[rgba(var(--accent-stroke-color),0.9)]
 // stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2
@@ -26,8 +32,30 @@ function Card({ children, className, header, title, description }: CardProps) {
 }
 
 export function Info() {
+   const container = useRef<HTMLDivElement | null>(null)
+   useGSAP(() => {
+      gsap.fromTo(
+         container.current,
+         {
+            y: 50,
+            opacity: 0,
+         },
+         {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            scrollTrigger: {
+               trigger: container.current,
+               start: "top 80%",
+            },
+         },
+      )
+   })
    return (
-      <div className="w-[var(--content-width)] flex content-between py-8 px-16 border border-[var(--stroke-color)] gap-12">
+      <section
+         ref={container}
+         className="w-[var(--content-width)] flex content-between py-8 px-16 border border-[var(--stroke-color)] gap-12"
+      >
          <Card header="> 20" title="COUNTRIES" description="Operated U-boats during the wars">
             <FlagIcon className="row-span-3 h-10 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
          </Card>
@@ -43,6 +71,6 @@ export function Info() {
          <Card header="> 20000" title="PEOPLE" description="Died serving on submarines in WWII">
             <UserIcon className="row-span-3 h-10 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
          </Card>
-      </div>
+      </section>
    )
 }

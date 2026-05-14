@@ -31,14 +31,24 @@ function Picture({ width, height, className, imageClassName, src, alt }: Picture
    )
 }
 
-function Header({ children, className }: ConstructorElement) {
+function Header({ className = "", children }: ConstructorElement) {
    return <h2 className={`${className} text-white text-2xl font-medium mt-4`}>{children}</h2>
 }
 
-function Parapgraph({ children, className }: ConstructorElement) {
+function Parapgraph({ className = "", children }: ConstructorElement) {
    return <p className={`${className} text-light-gray text-lg font-normal mt-1`}>{children}</p>
 }
 
+function Introduction({ className = "", children }: ConstructorElement) {
+   return <p className={`${className} text-light-gray text-lg`}>{children}</p>
+}
+
+function Name({ className = "", children }: ConstructorElement) {
+   return <h1 className={`${className} text-gray-gradient text-5xl font-semibold`}>{children}</h1>
+}
+
+Constructor.Name = Name
+Constructor.Introduction = Introduction
 Constructor.Picture = Picture
 Constructor.Header = Header
 Constructor.Paragraph = Parapgraph

@@ -1,6 +1,5 @@
 "use client"
 
-import PersonCard from "@/UI/PersonCard/PersonCard"
 import Constructor from "../page.constructor"
 
 import hartenstein from "@/assets/images/hartenstein.jpg"
@@ -17,8 +16,8 @@ export default function Page() {
             alt="Werner Hartenstein"
             className="float-left mb-2 mr-8"
          />
-         <PersonCard.Introduction>THE COMMANDER OF U-156</PersonCard.Introduction>
-         <PersonCard.Name className="whitespace-nowrap">WERNER HARTENSTEIN</PersonCard.Name>
+         <Constructor.Introduction>THE COMMANDER OF U-156</Constructor.Introduction>
+         <Constructor.Name className="whitespace-nowrap">WERNER HARTENSTEIN</Constructor.Name>
          <Constructor.Paragraph>
             Werner Hartenstein (1908–1943) was a German U-boat commander remembered both as a highly capable submarine
             officer and as one of the most controversial humanitarian figures of the Battle of the Atlantic. Best known

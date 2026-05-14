@@ -1,6 +1,5 @@
 "use client"
 
-import PersonCard from "@/UI/PersonCard/PersonCard"
 import Constructor from "../page.constructor"
 
 import donitz2 from "@/assets/images/donitz2.png"
@@ -17,8 +16,8 @@ export default function Page() {
             alt="Karl Donitz"
             className="float-left mb-2 mr-8"
          />
-         <PersonCard.Introduction>THE GRAND ADMIRAL</PersonCard.Introduction>
-         <PersonCard.Name className="whitespace-nowrap">KARL DONITZ</PersonCard.Name>
+         <Constructor.Introduction>THE GRAND ADMIRAL</Constructor.Introduction>
+         <Constructor.Name className="whitespace-nowrap inline">KARL DONITZ</Constructor.Name>
          <Constructor.Paragraph>
             Karl Dönitz (1891–1980) was a disciplined German admiral who transformed the Nazi U-boat arm into a powerful
             “wolfpack,” sank thousands of Allied ships in the Atlantic, and briefly led Germany after Hitler’s death – a

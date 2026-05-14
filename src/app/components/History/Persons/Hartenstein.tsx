@@ -19,7 +19,7 @@ export function Hartenstein() {
                Werner Hartenstein was a respected U-boat commander of WWII, remembered for his leadership during the
                Laconia incident and for attempting to rescue hundreds of survivors at sea.
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-10`} href="/hartenstein">
+            <Button className={`${styles.button} mt-10 opacity-0 person-button`} href="/hartenstein">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>
