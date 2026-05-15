@@ -57,7 +57,10 @@ export function Submarines() {
       { scope: container },
    )
    return (
-      <section ref={container} className="w-[var(--content-width)] flex h-max justify-between gap-8">
+      <section
+         ref={container}
+         className="w-[var(--content-width)] h-max grid grid-cols-1 md:grid-cols-2 min-[1600px]:grid-cols-4! gap-8"
+      >
          {submarines.map((card, index) => (
             <Card key={index} title={card.title} description={card.description} href={card.href} image={card.image} />
          ))}

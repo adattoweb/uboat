@@ -47,7 +47,7 @@ export function About() {
    })
    return (
       <section className="w-[var(--content-width)]">
-         <ul className="flex gap-8">
+         <ul className="grid grid-cols-1 md:grid-cols-2 min-[1600px]:grid-cols-4! gap-8">
             {about.map((card, index) => (
                <Card
                   key={index}

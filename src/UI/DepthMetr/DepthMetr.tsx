@@ -1,8 +1,13 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { XMarkIcon } from "@heroicons/react/24/outline"
+import { useEffect, useMemo, useRef, useState } from "react"
+
+import gsap from "gsap"
 
 export function DepthMeter() {
+   const container = useRef<HTMLDivElement | null>(null)
+   const [isOpen, setIsOpen] = useState(true)
    const [depth, setDepth] = useState(0)
    const maxDepth = 250
 
@@ -49,15 +54,34 @@ export function DepthMeter() {
    const circleLength = 2 * Math.PI * radius
    const dashOffset = circleLength - progress * circleLength
 
+   const handleClose = () => {
+      gsap.to(container.current, {
+         opacity: 0,
+         y: 25,
+         duration: 0.3,
+         ease: "power2.out",
+         onComplete: () => {
+            setIsOpen(false)
+         },
+      })
+   }
+
+   if (!isOpen) return
+
    return (
       <div
-         className="fixed bottom-4 left-4 z-50 min-w-68 pointer-events-none overflow-hidden rounded-3xl border border-white/10 backdrop-blur-xl flex items-center gap-2 pl-4 pr-6 py-2"
+         ref={container}
+         className="fixed bottom-4 left-4 z-50 min-w-68 rounded-3xl border border-white/10 backdrop-blur-xl flex items-center gap-2 pl-4 pr-6 py-2"
          style={{
             background: `radial-gradient(circle at top left, ${status.color}25, transparent 45%),
         linear-gradient(135deg, rgba(10,15,18,0.95), rgba(5,8,12,0.92))`,
             boxShadow: `0 0 40px ${status.color}20`,
          }}
       >
+         <XMarkIcon
+            className="absolute w-5 -left-2 -top-2 bg-[#2f2f2f] stroke-white rounded-full box-content p-1 cursor-pointer z-1"
+            onClick={handleClose}
+         />
          <div
             className="absolute inset-0 opacity-30"
             style={{
