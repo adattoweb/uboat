@@ -15,7 +15,7 @@ type ButtonComponent = React.ForwardRefExoticComponent<
 
 const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
    ({ className = "", children, onClick, href }, ref) => {
-      const classes = `${className} flex w-65 h-15 border-2 border-[rgba(var(--accent-stroke-color),0.9)] cursor-pointer hover:bg-[rgba(var(--accent-stroke-color),0.9)] hover:*:text-white ease duration-300 backdrop-blur-sm`
+      const classes = `${className} flex w-50 h-12 sm:w-55 sm:h-13 xl:w-65 xl:h-15 border-2 border-[rgba(var(--accent-stroke-color),0.9)] cursor-pointer hover:bg-[rgba(var(--accent-stroke-color),0.9)] hover:*:text-white ease duration-300 backdrop-blur-sm`
 
       if (href) {
          return (
@@ -42,7 +42,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 function Text({ className = "", children }: WithClassName & { children?: React.ReactNode }) {
-   return <p className={`${className} text-[var(--accent-color)] text-lg mx-auto my-auto`}>{children}</p>
+   return <p className={`${className} text-[var(--accent-color)] text-base xl:text-lg mx-auto my-auto`}>{children}</p>
 }
 
 Button.Text = Text

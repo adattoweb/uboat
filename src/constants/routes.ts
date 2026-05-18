@@ -16,8 +16,8 @@ export const ROUTES: Record<string, IRoute> = {
       ROUTE: "/history",
       NAME: "HISTORY",
    },
-   GALLERY: {
-      ROUTE: "/gallery",
-      NAME: "GALLERY",
-   },
+   // GALLERY: {
+   //    ROUTE: "/gallery",
+   //    NAME: "GALLERY",
+   // },
 }

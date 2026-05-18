@@ -7,7 +7,7 @@ interface ItemProps extends React.PropsWithChildren {
 
 function Item({ href, children }: ItemProps) {
    return (
-      <Link className="text-white font-normal" href={href}>
+      <Link className="text-white text-sm min-[360px]:text-base font-normal" href={href}>
          {children}
       </Link>
    )
@@ -15,7 +15,7 @@ function Item({ href, children }: ItemProps) {
 
 export function Navigation() {
    return (
-      <nav className="flex items-content gap-9 text-lg self-center ml-40">
+      <nav className="flex items-content gap-4 sm:gap-6 md:gap-8 text-lg self-center md:ml-15 min-[1600px]:ml-40">
          {Object.keys(ROUTES).map(key => (
             <Item key={key} href={ROUTES[key].ROUTE}>
                {ROUTES[key].NAME}

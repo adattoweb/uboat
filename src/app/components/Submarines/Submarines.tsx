@@ -21,10 +21,10 @@ function Card({ title, description, href, image }: ISubmarineCard) {
             draggable={false}
          />
          <div className="relative flex flex-col items-center bottom-8 w-full h-full px-6">
-            <h3 className="text-xl font-medium text-white">{title}</h3>
-            <p className="mt-5 text-light-gray font-medium text-base">{description}</p>
+            <h3 className="text-lg md:text-xl font-medium text-white">{title}</h3>
+            <p className="mt-3 md:mt-5 text-light-gray font-medium text-sm md:text-base">{description}</p>
             <Button className="mt-auto" href={href}>
-               <Button.Text>More</Button.Text>
+               <Button.Text>MORE</Button.Text>
             </Button>
          </div>
       </div>

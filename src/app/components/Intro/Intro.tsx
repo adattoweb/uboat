@@ -33,11 +33,15 @@ export function Intro() {
          ref={container}
          className="w-screen h-screen bg-[radial-gradient(circle_at_center,transparent,var(--background-color)_150%),url('/images/intro_background.png')] bg-cover bg-center flex"
       >
-         <div className="w-[var(--content-width)] h-full mx-auto flex flex-col">
-            <div className="mt-auto max-w-200 mb-80">
-               <h4 className="text move-in text-xl text-light-gray font-normal mb-2">SILENT. INVISIBLE. DEADLY</h4>
-               <h2 className="text move-in text-8xl text-white font-semibold mb-4">THE LEGEND BENEATH</h2>
-               <p className="text move-in text-xl text-light-gray font-normal mb-6">
+         <div className="w-[var(--content-width)] h-full mx-auto flex">
+            <div className="mt-auto max-w-200 mb-80 text-center flex flex-col items-center md:items-start md:text-start">
+               <h4 className="text move-in text-base sm:text-lg xl:text-xl text-light-gray font-normal mb-2">
+                  SILENT. INVISIBLE. DEADLY
+               </h4>
+               <h2 className="text move-in text-4xl sm:text-6xl xl:text-8xl text-white font-semibold mb-4">
+                  THE LEGEND BENEATH
+               </h2>
+               <p className="text move-in text-base sm:text-lg xl:text-xl text-light-gray font-normal mb-6">
                   Explore the engineering, history and wartime legacy of Germany`s U-boats that changed the course of
                   naval warfare forever
                </p>
