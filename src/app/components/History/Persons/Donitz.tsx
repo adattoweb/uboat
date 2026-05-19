@@ -11,7 +11,11 @@ import styles from "@/UI/PersonCard/PersonCard.module.css"
 export function Donitz() {
    return (
       <PersonCard>
-         <PersonCard.Portrait src={donitz.src} alt="Commander of Kriegsmarine" />
+         <PersonCard.Portrait
+            className="xl:w-75 2xl:w-85 min-[1921px]:w-98!"
+            src={donitz.src}
+            alt="Commander of Kriegsmarine"
+         />
          <PersonCard.Text>
             <PersonCard.Introduction>THE GRAND ADMIRAL</PersonCard.Introduction>
             <PersonCard.Name>KARL DÖNITZ</PersonCard.Name>

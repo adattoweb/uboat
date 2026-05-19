@@ -82,10 +82,10 @@ function PersonCard({ className = "", children }: CardProps) {
    })
    return (
       <section
-         className={`${styles.card} ${className} opacity-0 flex w-full h-108 border border-[var(--stroke-color)] relative`}
+         className={`${styles.card} ${className} opacity-0 flex w-full 2xl:h-92 min-[1921px]:h-108! border border-[var(--stroke-color)] relative`}
       >
          <Image
-            className={`${styles.eagle} absolute opacity-0 mt-8 mb-auto w-80`}
+            className={`${styles.eagle} absolute opacity-0 mb-auto mt-12 min-[1921px]:mt-8! 2xl:w-75 3xl:w-5!`}
             width={370}
             height={340}
             src={eagle.src}
@@ -107,7 +107,7 @@ type PortraitProps = WithClassName & {
 function Portrait({ className = "", width = 400, height = 500, src, alt }: PortraitProps) {
    return (
       <Image
-         className={`${styles.portrait} ${className} opacity-0 z-1 max-w-full h-max! block self-end`}
+         className={`${styles.portrait} ${className} opacity-0 z-1 block self-end shrink-0`}
          width={width}
          height={height}
          src={src}
@@ -120,7 +120,7 @@ function Portrait({ className = "", width = 400, height = 500, src, alt }: Portr
 function Picture({ className = "", width = 400, height = 248, src, alt }: PortraitProps) {
    return (
       <Image
-         className={`${className} person-gsap opacity-0 w-full! h-50 object-cover`}
+         className={`${className} person-gsap opacity-0 w-full! 2xl:h-40 min-[1921px]:h-50! object-cover`}
          width={width}
          height={height}
          src={src}
@@ -137,25 +137,43 @@ function Text({ className = "", children }: TextProps) {
 }
 
 function SmallText({ className = "", children }: TextProps) {
-   return <div className={`${className} max-w-100 max-h-full`}>{children}</div>
+   return <div className={`${className} 2xl:max-w-90 min-[1921px]:max-w-100! max-h-full`}>{children}</div>
 }
 
 function SmallHeader({ className = "", children }: TextProps) {
-   return <h3 className={`${className} person-gsap opacity-0 mt-4 text-[var(--accent-color)] text-xl`}>{children}</h3>
+   return (
+      <h3
+         className={`${className} person-gsap opacity-0 mt-4 text-[var(--accent-color)] text-lg min-[1921px]:text-xl!`}
+      >
+         {children}
+      </h3>
+   )
 }
 
 function Introduction({ className = "", children }: TextProps) {
-   return <p className={`${className}  person-gsap opacity-0 text-light-gray text-lg`}>{children}</p>
+   return (
+      <p className={`${className}  person-gsap opacity-0 text-light-gray text-base min-[1921px]:text-lg!`}>
+         {children}
+      </p>
+   )
 }
 
 function Name({ className = "", children }: TextProps) {
    return (
-      <h1 className={`${className}  person-gsap opacity-0 text-gray-gradient text-5xl font-semibold`}>{children}</h1>
+      <h1
+         className={`${className}  person-gsap opacity-0 text-gray-gradient text-3xl xl:text-4xl min-[1921px]:text-5xl! font-semibold`}
+      >
+         {children}
+      </h1>
    )
 }
 
 function Description({ className = "", children }: TextProps) {
-   return <p className={`${className}  person-gsap opacity-0 mt-2 text-light-gray text-lg`}>{children}</p>
+   return (
+      <p className={`${className}  person-gsap opacity-0 mt-2 text-light-gray text-base min-[1921px]:text-lg!`}>
+         {children}
+      </p>
+   )
 }
 
 PersonCard.Portrait = Portrait

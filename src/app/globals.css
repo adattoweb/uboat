@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+   --breakpoint-3xl: 1921px;
+}
+
 :root {
    --stroke-color: #404c51;
    --accent-color: #e2cca3;
