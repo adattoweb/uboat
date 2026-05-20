@@ -21,7 +21,7 @@ type CardProps = React.PropsWithChildren &
 function Card({ children, className, header, title, description }: CardProps) {
    return (
       <div
-         className={`${className} grid grid-cols-[auto_1fr] grid-rows-[auto_auto_auto] gap-x-6 2xl:gap-x-8 items-center py-6 px-8 2xl:py-0 2xl:px-0 2xl:pr-12 border 2xl:border-0 2xl:border-r border-[var(--stroke-color)] 2xl:last:border-r-0`}
+         className={`${className} grid grid-cols-[auto_1fr] grid-rows-[auto_auto_auto] gap-x-6 items-center py-6 px-6 border border-[var(--stroke-color)]`}
       >
          {children}
          <h3 className="text-2xl xl:text-3xl text-[var(--accent-color)] font-medium text-nowrap">{header}</h3>
@@ -54,7 +54,7 @@ export function Info() {
    return (
       <section
          ref={container}
-         className="w-[var(--content-width)] flex flex-col 2xl:flex-row content-between py-8 2xl:px-16 2xl:border border-[var(--stroke-color)] gap-10"
+         className="w-[var(--content-width)] grid grid-cols-1 lg:grid-cols-2 3xl:grid-cols-3! 4xl:grid-cols-5! content-between border-[var(--stroke-color)] gap-10"
       >
          <Card header="> 20" title="COUNTRIES" description="Operated U-boats during the wars">
             <FlagIcon className="row-span-3 h-10 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />

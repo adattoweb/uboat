@@ -12,7 +12,7 @@ export function Hartenstein() {
    return (
       <PersonCard>
          <PersonCard.Portrait
-            className="w-60 sm:w-64 md:w-68 lg:w-70 xl:w-80 4xl:w-94! min-[730px]:ml-10"
+            className="w-60 sm:w-64 md:w-68 lg:w-70 xl:w-80 4xl:w-94! min-[730px]:ml-8"
             src={hartenstein.src}
             alt="Commander of U-156"
          />

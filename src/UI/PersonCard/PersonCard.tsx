@@ -85,7 +85,7 @@ function PersonCard({ className = "", children }: CardProps) {
          className={`${styles.card} ${className} opacity-0 flex w-full h-auto min-[730px]:h-94 3xl:h-92 4xl:h-108! border border-[var(--stroke-color)] relative`}
       >
          <Image
-            className={`${styles.eagle} hidden min-[730px]:block absolute opacity-0 mb-auto mt-10 3xl:mt-8! w-60 xl:w-60 3xl:w-70! 4xl:w-80!`}
+            className={`${styles.eagle} hidden min-[730px]:block absolute opacity-0 mb-auto mt-14 lg:mt-10 3xl:mt-8! w-55 xl:w-60 3xl:w-70! 4xl:w-80!`}
             width={370}
             height={340}
             src={eagle.src}
@@ -93,7 +93,7 @@ function PersonCard({ className = "", children }: CardProps) {
             draggable={false}
          />
          <div
-            className={`${styles.content} px-10 lg:px-14 2xl:px-20 min-[730px]:gap-10 lg:gap-14 2xl:gap-20 flex flex-col-reverse min-[730px]:items-center min-[730px]:flex-row`}
+            className={`${styles.content} px-10 min-[730px]:px-6 lg:px-14 2xl:px-20 min-[730px]:gap-6 lg:gap-12 xl:gap-16 2xl:gap-20 flex flex-col-reverse min-[730px]:items-center min-[730px]:flex-row`}
          >
             {children}
          </div>
@@ -159,13 +159,19 @@ function SmallHeader({ className = "", children }: TextProps) {
 }
 
 function Introduction({ className = "", children }: TextProps) {
-   return <p className={`${className}  person-gsap opacity-0 text-light-gray text-base 4xl:text-lg!`}>{children}</p>
+   return (
+      <p
+         className={`${className}  person-gsap opacity-0 text-light-gray text-base min-[730px]:text-sm lg:text-base 4xl:text-lg!`}
+      >
+         {children}
+      </p>
+   )
 }
 
 function Name({ className = "", children }: TextProps) {
    return (
       <h1
-         className={`${className}  person-gsap opacity-0 text-gray-gradient text-3xl xl:text-4xl 4xl:text-5xl! font-semibold`}
+         className={`${className} person-gsap opacity-0 text-gray-gradient text-3xl min-[730px]:text-2xl lg:text-3xl xl:text-4xl 4xl:text-5xl! font-semibold`}
       >
          {children}
       </h1>
