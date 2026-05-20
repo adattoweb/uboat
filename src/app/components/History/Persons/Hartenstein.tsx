@@ -11,15 +11,19 @@ import styles from "@/UI/PersonCard/PersonCard.module.css"
 export function Hartenstein() {
    return (
       <PersonCard>
-         <PersonCard.Portrait className="w-90 ml-10" src={hartenstein.src} alt="Commander of U-156" />
+         <PersonCard.Portrait
+            className="w-60 sm:w-64 md:w-68 lg:w-70 xl:w-80 4xl:w-94! min-[730px]:ml-10"
+            src={hartenstein.src}
+            alt="Commander of U-156"
+         />
          <PersonCard.Text>
-            <PersonCard.Introduction>Commander of U-156</PersonCard.Introduction>
+            <PersonCard.Introduction>COMMANDER OF U-156</PersonCard.Introduction>
             <PersonCard.Name>WERNER HARTENSTEIN</PersonCard.Name>
             <PersonCard.Description>
                Werner Hartenstein was a respected U-boat commander of WWII, remembered for his leadership during the
                Laconia incident and for attempting to rescue hundreds of survivors at sea.
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-10 opacity-0 person-button`} href="/hartenstein">
+            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-button opacity-0`} href="/hartenstein">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>

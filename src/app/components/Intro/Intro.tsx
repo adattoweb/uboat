@@ -34,7 +34,7 @@ export function Intro() {
          className="w-screen h-screen bg-[radial-gradient(circle_at_center,transparent,var(--background-color)_150%),url('/images/intro_background.png')] bg-cover bg-center flex"
       >
          <div className="w-[var(--content-width)] h-full mx-auto flex">
-            <div className="mt-auto max-w-200 mb-80 text-center flex flex-col items-center md:items-start md:text-start">
+            <div className="mt-auto max-w-175 xl:max-w-200 mb-80 text-center flex flex-col items-center md:items-start md:text-start">
                <h4 className="text move-in text-base sm:text-lg xl:text-xl text-light-gray font-normal mb-2">
                   SILENT. INVISIBLE. DEADLY
                </h4>

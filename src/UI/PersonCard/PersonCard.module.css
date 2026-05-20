@@ -1,17 +1,18 @@
-.card:nth-child(even),
-.card:nth-child(even) .content {
-   flex-direction: row-reverse;
-}
+@media (min-width: 730px) {
+   .card:nth-child(even),
+   .card:nth-child(even) .content {
+      flex-direction: row-reverse;
+   }
 
-.card:nth-child(even) .text {
-   text-align: end;
-}
+   .card:nth-child(even) .text {
+      text-align: end;
+   }
 
-.card:nth-child(even) .button {
-   margin-left: auto;
-}
-
-.card:nth-child(even) .eagle,
-.card:nth-child(even) .portrait {
-   transform: scaleX(-1);
+   .card:nth-child(even) .button {
+      margin-left: auto;
+   }
+   .card:nth-child(even) .eagle,
+   .card:nth-child(even) .portrait {
+      transform: scaleX(-1);
+   }
 }

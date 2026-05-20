@@ -82,17 +82,21 @@ function PersonCard({ className = "", children }: CardProps) {
    })
    return (
       <section
-         className={`${styles.card} ${className} opacity-0 flex w-full 2xl:h-92 min-[1921px]:h-108! border border-[var(--stroke-color)] relative`}
+         className={`${styles.card} ${className} opacity-0 flex w-full h-auto min-[730px]:h-94 3xl:h-92 4xl:h-108! border border-[var(--stroke-color)] relative`}
       >
          <Image
-            className={`${styles.eagle} absolute opacity-0 mb-auto mt-12 min-[1921px]:mt-8! 2xl:w-75 3xl:w-5!`}
+            className={`${styles.eagle} hidden min-[730px]:block absolute opacity-0 mb-auto mt-10 3xl:mt-8! w-60 xl:w-60 3xl:w-70! 4xl:w-80!`}
             width={370}
             height={340}
             src={eagle.src}
             alt="background eagle"
             draggable={false}
          />
-         <div className={`${styles.content} flex px-20 gap-20 items-center`}>{children}</div>
+         <div
+            className={`${styles.content} px-10 lg:px-14 2xl:px-20 min-[730px]:gap-10 lg:gap-14 2xl:gap-20 flex flex-col-reverse min-[730px]:items-center min-[730px]:flex-row`}
+         >
+            {children}
+         </div>
       </section>
    )
 }
@@ -107,7 +111,7 @@ type PortraitProps = WithClassName & {
 function Portrait({ className = "", width = 400, height = 500, src, alt }: PortraitProps) {
    return (
       <Image
-         className={`${styles.portrait} ${className} opacity-0 z-1 block self-end shrink-0`}
+         className={`${styles.portrait} ${className} min-w-full min-[730px]:min-w-auto opacity-0 z-1 block self-start min-[730px]:self-end shrink-0`}
          width={width}
          height={height}
          src={src}
@@ -120,7 +124,7 @@ function Portrait({ className = "", width = 400, height = 500, src, alt }: Portr
 function Picture({ className = "", width = 400, height = 248, src, alt }: PortraitProps) {
    return (
       <Image
-         className={`${className} person-gsap opacity-0 w-full! 2xl:h-40 min-[1921px]:h-50! object-cover`}
+         className={`${className} person-gsap opacity-0 w-full! 2xl:h-40 4xl:h-50! object-cover`}
          width={width}
          height={height}
          src={src}
@@ -133,35 +137,35 @@ function Picture({ className = "", width = 400, height = 248, src, alt }: Portra
 type TextProps = React.PropsWithChildren & WithClassName
 
 function Text({ className = "", children }: TextProps) {
-   return <div className={`${styles.text} ${className} flex-1 flex flex-col`}>{children}</div>
+   return (
+      <div
+         className={`${styles.text} ${className} relative top-6 min-[730px]:static min-[730px]:top-0 min-[730px]:py-2 md:py-0 flex-1 flex flex-col`}
+      >
+         {children}
+      </div>
+   )
 }
 
 function SmallText({ className = "", children }: TextProps) {
-   return <div className={`${className} 2xl:max-w-90 min-[1921px]:max-w-100! max-h-full`}>{children}</div>
+   return <div className={`${className} 2xl:max-w-90 4xl:max-w-100! max-h-full hidden 3xl:block`}>{children}</div>
 }
 
 function SmallHeader({ className = "", children }: TextProps) {
    return (
-      <h3
-         className={`${className} person-gsap opacity-0 mt-4 text-[var(--accent-color)] text-lg min-[1921px]:text-xl!`}
-      >
+      <h3 className={`${className} person-gsap opacity-0 mt-4 text-[var(--accent-color)] text-lg 4xl:text-xl!`}>
          {children}
       </h3>
    )
 }
 
 function Introduction({ className = "", children }: TextProps) {
-   return (
-      <p className={`${className}  person-gsap opacity-0 text-light-gray text-base min-[1921px]:text-lg!`}>
-         {children}
-      </p>
-   )
+   return <p className={`${className}  person-gsap opacity-0 text-light-gray text-base 4xl:text-lg!`}>{children}</p>
 }
 
 function Name({ className = "", children }: TextProps) {
    return (
       <h1
-         className={`${className}  person-gsap opacity-0 text-gray-gradient text-3xl xl:text-4xl min-[1921px]:text-5xl! font-semibold`}
+         className={`${className}  person-gsap opacity-0 text-gray-gradient text-3xl xl:text-4xl 4xl:text-5xl! font-semibold`}
       >
          {children}
       </h1>
@@ -170,7 +174,9 @@ function Name({ className = "", children }: TextProps) {
 
 function Description({ className = "", children }: TextProps) {
    return (
-      <p className={`${className}  person-gsap opacity-0 mt-2 text-light-gray text-base min-[1921px]:text-lg!`}>
+      <p
+         className={`${className}  person-gsap opacity-0 mt-2 text-light-gray text-base min-[730px]:text-sm xl:text-base 4xl:text-lg!`}
+      >
          {children}
       </p>
    )

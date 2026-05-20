@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-   --breakpoint-3xl: 1921px;
+   --breakpoint-3xl: 1601px;
+   --breakpoint-4xl: 1921px;
 }
 
 :root {

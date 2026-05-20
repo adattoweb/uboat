@@ -69,15 +69,15 @@ export function Technology() {
          id="technology"
          className="opacity-0 w-[var(--content-width)] flex flex-col xl:flex-row border border-[var(--stroke-color)] py-16 px-12 gap-14 h-max items-center"
       >
-         <div className="mt-auto xl:max-w-100 min-[1920px]:max-w-150 flex flex-col items-center text-center md:items-start md:text-start mr-auto">
+         <div className="mt-auto xl:max-w-100 4xl:max-w-150 flex flex-col items-center text-center md:items-start md:text-start mr-auto">
             <h4 className="tech-gsap opacity-0 text-base sm:text-lg xl:text-xl text-light-gray font-normal mb-2">
                AN ICON OF WARFARE
             </h4>
-            <h2 className="tech-gsap opacity-0 text-4xl md:text-6xl min-[1920px]:text-7xl! font-semibold mb-4 flex flex-col">
+            <h2 className="tech-gsap opacity-0 text-4xl md:text-6xl 4xl:text-7xl! font-semibold mb-4 flex flex-col">
                <span className="text-gray-gradient">UBOAT</span>
                <span className="text-gray-gradient">TECHNOLOGY</span>
             </h2>
-            <p className="tech-gsap opacity-0 text-base md:text-lg min-[1920px]:text-xl text-light-gray font-normal mb-6">
+            <p className="tech-gsap opacity-0 text-base md:text-lg 4xl:text-xl text-light-gray font-normal mb-6">
                German U-boats were a result of engineering precision, innovation and ruthless efficiency.
             </p>
             <Button ref={button} className="opacity-0">

@@ -11,7 +11,11 @@ import styles from "@/UI/PersonCard/PersonCard.module.css"
 export function Kretschmer() {
    return (
       <PersonCard>
-         <PersonCard.Portrait className="w-120" src={kretschmer.src} alt="Commander of Kriegsmarine" />
+         <PersonCard.Portrait
+            className="w-70 sm:w-75 md:w-82 lg:w-88 xl:w-96 4xl:w-110!"
+            src={kretschmer.src}
+            alt="Commander of Kriegsmarine"
+         />
          <PersonCard.Text>
             <PersonCard.Introduction>THE MOST SUCCESSFUL COMMANDER</PersonCard.Introduction>
             <PersonCard.Name>OTTO KRETSCHMER</PersonCard.Name>
@@ -20,7 +24,7 @@ export function Kretschmer() {
                of over 270,000 tons — the highest of any submariner. He became known for his precise and efficient
                tactics, often described as “one torpedo — one ship.”
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-10 opacity-0 person-button`} href="/kretschmer">
+            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-button opacity-0`} href="/kretschmer">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>

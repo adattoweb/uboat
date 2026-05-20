@@ -11,7 +11,10 @@ import { useRef } from "react"
 
 function Card({ title, description, href, image }: ISubmarineCard) {
    return (
-      <div id="types" className="sub-card opacity-0 flex flex-col h-100 flex-1 border border-[var(--stroke-color)]">
+      <div
+         id="types"
+         className="sub-card opacity-0 flex flex-col h-100 3xl:h-100 flex-1 border border-[var(--stroke-color)]"
+      >
          <Image
             width={400}
             height={300}
@@ -22,7 +25,7 @@ function Card({ title, description, href, image }: ISubmarineCard) {
          />
          <div className="relative flex flex-col items-center bottom-8 w-full h-full px-6">
             <h3 className="text-lg md:text-xl font-medium text-white">{title}</h3>
-            <p className="mt-3 md:mt-5 text-light-gray font-medium text-sm md:text-base">{description}</p>
+            <p className="mt-3 md:mt-5 text-light-gray text-base">{description}</p>
             <Button className="mt-auto" href={href}>
                <Button.Text>MORE</Button.Text>
             </Button>
@@ -59,7 +62,7 @@ export function Submarines() {
    return (
       <section
          ref={container}
-         className="w-[var(--content-width)] h-max grid grid-cols-1 md:grid-cols-2 min-[1601px]:grid-cols-4! gap-8"
+         className="w-[var(--content-width)] h-max grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4! gap-8"
       >
          {submarines.map((card, index) => (
             <Card key={index} title={card.title} description={card.description} href={card.href} image={card.image} />
