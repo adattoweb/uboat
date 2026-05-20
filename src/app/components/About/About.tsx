@@ -6,6 +6,7 @@ import { about } from "@/constants/about"
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { useRef } from "react"
 
 function Card({ title, description, Icon, href, image }: IAboutCard) {
    // first:-... для іконки субмарини, вона повинна по іншому відображатись, тому для неї особливий підхід. Враховуй це, коли будеш змінювати іконку ( ! )
@@ -25,29 +26,32 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
 }
 
 export function About() {
+   const container = useRef<HTMLUListElement | null>(null)
    useGSAP(() => {
-      gsap.fromTo(
-         ".about-card",
-         {
-            y: 25,
-            opacity: 0,
-         },
-         {
-            y: 0,
-            opacity: 1,
-            ease: "power1.out",
-            duration: 0.75,
-            stagger: 0.25,
-            scrollTrigger: {
-               trigger: ".about-card",
-               start: "top 80%",
+      gsap.utils.toArray<HTMLElement>(".about-card").forEach((card, index) => {
+         gsap.fromTo(
+            card,
+            {
+               y: 25,
+               opacity: 0,
             },
-         },
-      )
+            {
+               y: 0,
+               opacity: 1,
+               ease: "power1.out",
+               duration: 0.75,
+               delay: index * 0.25,
+               scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+               },
+            },
+         )
+      })
    })
    return (
       <section className="w-[var(--content-width)]">
-         <ul className="grid grid-cols-1 md:grid-cols-2 min-[1601px]:grid-cols-4! gap-8">
+         <ul ref={container} className="grid grid-cols-1 md:grid-cols-2 min-[1601px]:grid-cols-4! gap-8">
             {about.map((card, index) => (
                <Card
                   key={index}

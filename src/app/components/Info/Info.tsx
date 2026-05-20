@@ -21,7 +21,7 @@ type CardProps = React.PropsWithChildren &
 function Card({ children, className, header, title, description }: CardProps) {
    return (
       <div
-         className={`${className} grid grid-cols-[auto_1fr] grid-rows-[auto_auto_auto] gap-x-6 items-center py-6 px-6 border border-[var(--stroke-color)]`}
+         className={`${className} info-card grid grid-cols-[auto_1fr] grid-rows-[auto_auto_auto] gap-x-6 items-center py-6 px-6 border border-[var(--stroke-color)]`}
       >
          {children}
          <h3 className="text-2xl xl:text-3xl text-[var(--accent-color)] font-medium text-nowrap">{header}</h3>
@@ -33,24 +33,31 @@ function Card({ children, className, header, title, description }: CardProps) {
 
 export function Info() {
    const container = useRef<HTMLDivElement | null>(null)
-   useGSAP(() => {
-      gsap.fromTo(
-         container.current,
-         {
-            y: 50,
-            opacity: 0,
-         },
-         {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            scrollTrigger: {
-               trigger: container.current,
-               start: "top 80%",
-            },
-         },
-      )
-   })
+   useGSAP(
+      () => {
+         gsap.utils.toArray<HTMLDivElement>(".info-card").forEach((card, index) => {
+            gsap.fromTo(
+               card,
+               {
+                  y: 50,
+                  opacity: 0,
+               },
+               {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power1.out",
+                  duration: 0.75,
+                  delay: index * 0.25,
+                  scrollTrigger: {
+                     trigger: card,
+                     start: "top 80%",
+                  },
+               },
+            )
+         })
+      },
+      { scope: container },
+   )
    return (
       <section
          ref={container}

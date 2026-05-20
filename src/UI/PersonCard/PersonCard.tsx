@@ -39,6 +39,10 @@ function PersonCard({ className = "", children }: CardProps) {
                y: 0,
                opacity: 1,
                duration: 0.5,
+               scrollTrigger: {
+                  trigger: card.querySelector(`.${styles.portrait}`),
+                  start: "top 80%",
+               },
             },
          )
 

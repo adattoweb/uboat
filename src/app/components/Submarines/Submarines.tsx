@@ -38,24 +38,26 @@ export function Submarines() {
    const container = useRef<HTMLDivElement | null>(null)
    useGSAP(
       () => {
-         gsap.fromTo(
-            ".sub-card",
-            {
-               y: 25,
-               opacity: 0,
-            },
-            {
-               y: 0,
-               opacity: 1,
-               ease: "power1.out",
-               duration: 0.75,
-               stagger: 0.25,
-               scrollTrigger: {
-                  trigger: ".sub-card",
-                  start: "top 80%",
+         gsap.utils.toArray<HTMLDivElement>(".sub-card").forEach((card, index) => {
+            gsap.fromTo(
+               card,
+               {
+                  y: 25,
+                  opacity: 0,
                },
-            },
-         )
+               {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power1.out",
+                  duration: 0.75,
+                  delay: index * 0.25,
+                  scrollTrigger: {
+                     trigger: card,
+                     start: "top 80%",
+                  },
+               },
+            )
+         })
       },
       { scope: container },
    )
