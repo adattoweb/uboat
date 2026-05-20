@@ -7,7 +7,7 @@ import gsap from "gsap"
 
 export function DepthMeter() {
    const container = useRef<HTMLDivElement | null>(null)
-   const [isOpen, setIsOpen] = useState(true)
+   const [isOpen, setIsOpen] = useState(false) // default value: true
    const [depth, setDepth] = useState(0)
    const maxDepth = 250
 

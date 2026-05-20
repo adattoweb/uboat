@@ -12,7 +12,7 @@ export function LoadScreen() {
    const [isLoading, setIsLoading] = useState(true) // default value: true
    const topRef = useRef<HTMLDivElement | null>(null)
    const bottomRef = useRef<HTMLDivElement | null>(null)
-   const buttonRef = useRef<HTMLDivElement | null>(null)
+   const buttonRef = useRef<HTMLAnchorElement | HTMLButtonElement | null>(null)
 
    const handleClick = () => {
       const tl = gsap.timeline({

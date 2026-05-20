@@ -67,7 +67,7 @@ export function Technology() {
       <section
          ref={container}
          id="technology"
-         className="opacity-0 w-[var(--content-width)] flex flex-col xl:flex-row border border-[var(--stroke-color)] py-16 px-12 gap-14 h-max items-center"
+         className="opacity-0 w-[var(--content-width)] flex flex-col xl:flex-row border border-[var(--stroke-color)] py-12 xl:py-16 px-8 xl:px-12 gap-10 xl:gap-14 h-max items-center"
       >
          <div className="mt-auto xl:max-w-100 4xl:max-w-150 flex flex-col items-center text-center md:items-start md:text-start mr-auto">
             <h4 className="tech-gsap opacity-0 text-base sm:text-lg xl:text-xl text-light-gray font-normal mb-2">
@@ -90,7 +90,7 @@ export function Technology() {
             height={550}
             src={submarine}
             alt="submarine"
-            className="flex-1 min-w-0 h-auto object-cover opacity-0 hidden sm:block max-w-230"
+            className="pl-4 flex-1 min-w-0 w-full min-h-0 h-auto object-cover opacity-0 hidden sm:block max-w-300"
             draggable={false}
          />
       </section>
