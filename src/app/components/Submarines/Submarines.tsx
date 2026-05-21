@@ -36,31 +36,43 @@ function Card({ title, description, href, image }: ISubmarineCard) {
 
 export function Submarines() {
    const container = useRef<HTMLDivElement | null>(null)
-   useGSAP(
-      () => {
-         gsap.utils.toArray<HTMLDivElement>(".sub-card").forEach((card, index) => {
-            gsap.fromTo(
-               card,
-               {
-                  y: 25,
-                  opacity: 0,
-               },
-               {
-                  y: 0,
-                  opacity: 1,
-                  ease: "power1.out",
-                  duration: 0.75,
-                  delay: index * 0.25,
-                  scrollTrigger: {
-                     trigger: card,
-                     start: "top 80%",
-                  },
-               },
-            )
+   useGSAP(() => {
+      const isMobile = window.innerWidth < 768
+
+      const tl = gsap.timeline({
+         scrollTrigger: {
+            trigger: container.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: 0.6,
+         },
+      })
+
+      tl.fromTo(
+         ".sub-card",
+         {
+            opacity: 0,
+            y: 60,
+         },
+         {
+            opacity: 1,
+            y: 0,
+            ease: "power1.out",
+            stagger: isMobile ? 0 : 0.25,
+            duration: 0.4,
+         },
+      )
+         .to(".sub-card", {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
          })
-      },
-      { scope: container },
-   )
+         .to(".sub-card", {
+            opacity: 0,
+            y: -60,
+            duration: 0.4,
+         })
+   })
    return (
       <section
          ref={container}

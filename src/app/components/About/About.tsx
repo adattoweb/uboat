@@ -28,42 +28,41 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
 export function About() {
    const container = useRef<HTMLUListElement | null>(null)
    useGSAP(() => {
-      gsap.utils.toArray<HTMLElement>(".about-card").forEach(card => {
-         const tl = gsap.timeline({
-            scrollTrigger: {
-               trigger: card,
-               start: "top 90%",
-               end: "bottom 10%",
-               scrub: 0.6,
-            },
-         })
+      const isMobile = window.innerWidth < 768
 
-         tl.fromTo(
-            card,
-            {
-               opacity: 0,
-               y: 60,
-            },
-            {
-               opacity: 1,
-               y: 0,
-               ease: "power1.out",
-               duration: 0.35,
-            },
-         )
-            .to(card, {
-               opacity: 1,
-               y: 0,
-               ease: "none",
-               duration: 0.3,
-            })
-            .to(card, {
-               opacity: 0,
-               y: -60,
-               ease: "power1.out",
-               duration: 0.35,
-            })
+      const tl = gsap.timeline({
+         scrollTrigger: {
+            trigger: container.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: 0.6,
+         },
       })
+
+      tl.fromTo(
+         ".about-card",
+         {
+            opacity: 0,
+            y: 60,
+         },
+         {
+            opacity: 1,
+            y: 0,
+            ease: "power1.out",
+            stagger: isMobile ? 0 : 0.25,
+            duration: 0.4,
+         },
+      )
+         .to(".about-card", {
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+         })
+         .to(".about-card", {
+            opacity: 0,
+            y: -60,
+            duration: 0.4,
+         })
    })
    return (
       <section className="w-[var(--content-width)]">
