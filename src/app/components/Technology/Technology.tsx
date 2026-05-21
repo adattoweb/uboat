@@ -16,19 +16,19 @@ export function Technology() {
       () => {
          const tl = gsap.timeline({
             scrollTrigger: {
-               trigger: ".tech-gsap",
+               trigger: container.current,
                start: "top 85%",
-               end: "bottom 15%",
+               end: "bottom 5%",
                scrub: 0.4,
             },
             defaults: {
-               ease: "none",
+               ease: "power1.out",
             },
          })
 
          tl.to(container.current, {
             opacity: 1,
-            duration: 0.3,
+            duration: 0.2,
          })
             .fromTo(
                ".tech-gsap",
@@ -40,7 +40,7 @@ export function Technology() {
                   y: 0,
                   opacity: 1,
                   stagger: 0.15,
-                  duration: 0.4,
+                  duration: 0.3,
                },
             )
             .to(
@@ -66,7 +66,7 @@ export function Technology() {
 
          tl.to(container.current, {
             opacity: 0,
-            y: -40,
+            y: -60,
             duration: 0.7,
          })
       },
