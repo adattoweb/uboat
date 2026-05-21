@@ -22,7 +22,7 @@ export function Technology() {
                scrub: 0.4,
             },
             defaults: {
-               ease: "power1.out",
+               ease: "none",
             },
          })
 
@@ -30,6 +30,7 @@ export function Technology() {
             opacity: 1,
             duration: 0.2,
          })
+
             .fromTo(
                ".tech-gsap",
                {
@@ -43,26 +44,24 @@ export function Technology() {
                   duration: 0.3,
                },
             )
-            .to(
-               button.current,
-               {
-                  opacity: 1,
-                  duration: 0.3,
-               },
-               "-=0.2",
-            )
             .fromTo(
                image.current,
                {
-                  y: 60,
+                  y: 20,
                   opacity: 0,
                },
                {
                   y: 0,
                   opacity: 1,
-                  duration: 0.5,
+                  duration: 0.25,
                },
+               "<0.1",
             )
+
+            .to(button.current, {
+               opacity: 1,
+               duration: 0.25,
+            })
 
          tl.to(container.current, {
             opacity: 0,

@@ -14,74 +14,89 @@ type CardProps = React.PropsWithChildren & WithClassName
 function PersonCard({ className = "", children }: CardProps) {
    useGSAP(() => {
       gsap.utils.toArray<HTMLDivElement>(`.${styles.card}`).forEach(card => {
+         const portrait = card.querySelector(`.${styles.portrait}`)
+         const eagle = card.querySelector(`.${styles.eagle}`)
+         const texts = card.querySelectorAll(".person-gsap")
+         const button = card.querySelector(".person-button")
+
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: card,
-               start: "top 80%",
+               start: "top 90%",
+               end: "bottom 15%",
+               scrub: 0.6,
             },
             defaults: {
-               ease: "power1.out",
+               ease: "none",
             },
          })
 
          tl.to(card, {
             opacity: 1,
-            duration: 0.5,
+            duration: 0.2,
          })
 
          tl.fromTo(
-            card.querySelector(`.${styles.portrait}`),
+            portrait,
             {
-               y: 50,
+               y: 60,
                opacity: 0,
             },
             {
                y: 0,
                opacity: 1,
-               duration: 0.5,
-               scrollTrigger: {
-                  trigger: card.querySelector(`.${styles.portrait}`),
-                  start: "top 80%",
-               },
+               duration: 0.4,
             },
          )
 
          tl.fromTo(
-            card.querySelector(`.${styles.eagle}`),
+            eagle,
             {
-               y: 50,
+               y: 60,
                opacity: 0,
             },
             {
                y: 0,
                opacity: 0.1,
-               duration: 0.5,
+               duration: 0.4,
             },
+            "<0.1",
          )
 
          tl.fromTo(
-            card.querySelectorAll(".person-gsap"),
+            texts,
             {
-               y: 50,
+               y: 40,
                opacity: 0,
             },
             {
                y: 0,
                opacity: 1,
-               stagger: 0.25,
-               duration: 0.5,
+               stagger: 0.2,
+               duration: 0.4,
             },
-            "<0.25",
+            "<0.1",
          )
 
-         tl.to(
-            card.querySelector(".person-button"),
+         tl.fromTo(
+            button,
+            {
+               opacity: 0,
+               y: 20,
+            },
             {
                opacity: 1,
-               duration: 0.5,
+               y: 0,
+               duration: 0.3,
             },
-            "-=1",
+            "<0.6",
          )
+
+         tl.to(card, {
+            opacity: 0,
+            y: -40,
+            duration: 0.6,
+         })
       })
    })
    return (
