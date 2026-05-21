@@ -17,49 +17,58 @@ export function Technology() {
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: ".tech-gsap",
-               start: "top 80%",
+               start: "top 85%",
+               end: "bottom 15%",
+               scrub: 0.4,
             },
             defaults: {
-               ease: "power1.out",
+               ease: "none",
             },
          })
+
          tl.to(container.current, {
             opacity: 1,
-            duration: 0.5,
+            duration: 0.3,
          })
             .fromTo(
                ".tech-gsap",
                {
-                  y: 25,
+                  y: 30,
                   opacity: 0,
                },
                {
                   y: 0,
                   opacity: 1,
-                  stagger: 0.25,
-                  duration: 0.75,
+                  stagger: 0.15,
+                  duration: 0.4,
                },
             )
             .to(
                button.current,
                {
                   opacity: 1,
-                  duration: 0.5,
+                  duration: 0.3,
                },
-               "-=0.5",
+               "-=0.2",
             )
             .fromTo(
                image.current,
                {
-                  y: 75,
+                  y: 60,
+                  opacity: 0,
                },
                {
                   y: 0,
-                  delay: 0.25,
-                  duration: 1,
                   opacity: 1,
+                  duration: 0.5,
                },
             )
+
+         tl.to(container.current, {
+            opacity: 0,
+            y: -40,
+            duration: 0.7,
+         })
       },
       { scope: container },
    )

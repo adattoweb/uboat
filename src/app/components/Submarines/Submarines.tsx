@@ -39,39 +39,46 @@ export function Submarines() {
    useGSAP(() => {
       const isMobile = window.innerWidth < 768
 
-      const tl = gsap.timeline({
-         scrollTrigger: {
-            trigger: container.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            scrub: 0.6,
-         },
-      })
+      gsap.utils.toArray<HTMLElement>(".sub-card").forEach((card, index) => {
+         const offset = isMobile ? 0 : index * 5
 
-      tl.fromTo(
-         ".sub-card",
-         {
-            opacity: 0,
-            y: 60,
-         },
-         {
-            opacity: 1,
-            y: 0,
-            ease: "power1.out",
-            stagger: isMobile ? 0 : 0.25,
-            duration: 0.4,
-         },
-      )
-         .to(".sub-card", {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
+         const tl = gsap.timeline({
+            scrollTrigger: {
+               trigger: card,
+               start: `top ${90 - offset}%`,
+               end: "bottom 10%",
+               scrub: 0.6,
+            },
          })
-         .to(".sub-card", {
-            opacity: 0,
-            y: -60,
-            duration: 0.4,
-         })
+
+         tl.fromTo(
+            card,
+            {
+               opacity: 0,
+               y: 60,
+            },
+            {
+               opacity: 1,
+               y: 0,
+               ease: "power1.out",
+               duration: 0.35,
+            },
+         )
+
+            .to(card, {
+               opacity: 1,
+               y: 0,
+               ease: "none",
+               duration: 0.3,
+            })
+
+            .to(card, {
+               opacity: 0,
+               y: -60,
+               ease: "power1.out",
+               duration: 0.35,
+            })
+      })
    })
    return (
       <section
