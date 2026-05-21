@@ -65,19 +65,19 @@ export function Submarines() {
             },
          )
 
-            .to(card, {
-               opacity: 1,
-               y: 0,
-               ease: "none",
-               duration: 0.3,
-            })
+         tl.to(card, {
+            opacity: 1,
+            y: 0,
+            ease: "none",
+            duration: 0.3,
+         })
 
-            .to(card, {
-               opacity: 0,
-               y: -60,
-               ease: "power1.out",
-               duration: 0.35,
-            })
+         tl.to(card, {
+            opacity: 0,
+            y: -60,
+            ease: "power1.out",
+            duration: 0.35,
+         })
       })
    })
    return (

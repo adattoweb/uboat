@@ -31,37 +31,37 @@ export function Technology() {
             duration: 0.2,
          })
 
-            .fromTo(
-               ".tech-gsap",
-               {
-                  y: 30,
-                  opacity: 0,
-               },
-               {
-                  y: 0,
-                  opacity: 1,
-                  stagger: 0.15,
-                  duration: 0.3,
-               },
-            )
-            .fromTo(
-               image.current,
-               {
-                  y: 20,
-                  opacity: 0,
-               },
-               {
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.25,
-               },
-               "<0.1",
-            )
-
-            .to(button.current, {
+         tl.fromTo(
+            ".tech-gsap",
+            {
+               y: 30,
+               opacity: 0,
+            },
+            {
+               y: 0,
+               opacity: 1,
+               stagger: 0.15,
+               duration: 0.3,
+            },
+         )
+         tl.fromTo(
+            image.current,
+            {
+               y: 20,
+               opacity: 0,
+            },
+            {
+               y: 0,
                opacity: 1,
                duration: 0.25,
-            })
+            },
+            "<0.1",
+         )
+
+         tl.to(button.current, {
+            opacity: 1,
+            duration: 0.25,
+         })
 
          tl.to(container.current, {
             opacity: 0,

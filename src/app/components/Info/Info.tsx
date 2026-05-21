@@ -33,31 +33,48 @@ function Card({ children, className, header, title, description }: CardProps) {
 
 export function Info() {
    const container = useRef<HTMLDivElement | null>(null)
-   useGSAP(
-      () => {
-         gsap.utils.toArray<HTMLDivElement>(".info-card").forEach((card, index) => {
-            gsap.fromTo(
-               card,
-               {
-                  y: 50,
-                  opacity: 0,
-               },
-               {
-                  y: 0,
-                  opacity: 1,
-                  ease: "power1.out",
-                  duration: 0.75,
-                  delay: index * 0.25,
-                  scrollTrigger: {
-                     trigger: card,
-                     start: "top 80%",
-                  },
-               },
-            )
+   useGSAP(() => {
+      const isMobile = window.innerWidth < 768
+
+      gsap.utils.toArray<HTMLElement>(".info-card").forEach((card, index) => {
+         const offset = isMobile ? 0 : index * 5
+
+         const tl = gsap.timeline({
+            scrollTrigger: {
+               trigger: card,
+               start: `top ${90 - offset}%`,
+               end: "bottom 10%",
+               scrub: 0.6,
+            },
          })
-      },
-      { scope: container },
-   )
+
+         tl.fromTo(
+            card,
+            {
+               opacity: 0,
+               y: 60,
+            },
+            {
+               opacity: 1,
+               y: 0,
+               ease: "power1.out",
+               duration: 0.35,
+            },
+         )
+         tl.to(card, {
+            opacity: 1,
+            y: 0,
+            ease: "none",
+            duration: 0.3,
+         })
+         tl.to(card, {
+            opacity: 0,
+            y: -60,
+            ease: "power1.out",
+            duration: 0.35,
+         })
+      })
+   })
    return (
       <section
          ref={container}
