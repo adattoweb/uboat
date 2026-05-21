@@ -28,25 +28,41 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
 export function About() {
    const container = useRef<HTMLUListElement | null>(null)
    useGSAP(() => {
-      gsap.utils.toArray<HTMLElement>(".about-card").forEach((card, index) => {
-         gsap.fromTo(
+      gsap.utils.toArray<HTMLElement>(".about-card").forEach(card => {
+         const tl = gsap.timeline({
+            scrollTrigger: {
+               trigger: card,
+               start: "top 90%",
+               end: "bottom 10%",
+               scrub: 0.6,
+            },
+         })
+
+         tl.fromTo(
             card,
             {
-               y: 25,
                opacity: 0,
+               y: 60,
             },
             {
-               y: 0,
                opacity: 1,
+               y: 0,
                ease: "power1.out",
-               duration: 0.75,
-               delay: index * 0.25,
-               scrollTrigger: {
-                  trigger: card,
-                  start: "top 80%",
-               },
+               duration: 0.35,
             },
          )
+            .to(card, {
+               opacity: 1,
+               y: 0,
+               ease: "none",
+               duration: 0.3,
+            })
+            .to(card, {
+               opacity: 0,
+               y: -60,
+               ease: "power1.out",
+               duration: 0.35,
+            })
       })
    })
    return (
