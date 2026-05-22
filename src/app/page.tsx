@@ -5,6 +5,7 @@ import { Info } from "./components/Info/Info"
 import { Intro } from "./components/Intro/Intro"
 import { Submarines } from "./components/Submarines/Submarines"
 import { Technology } from "./components/Technology/Technology"
+import { Gallery } from "./components/Gallery/Gallery"
 
 export default function Home() {
    return (
@@ -16,8 +17,9 @@ export default function Home() {
             <Submarines />
             <History />
             <Info />
+            <Gallery />
          </div>
-         <DepthMeter />
+         {/* <DepthMeter /> */}
       </div>
    )
 }

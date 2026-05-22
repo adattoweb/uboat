@@ -27,50 +27,53 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
 
 export function About() {
    const container = useRef<HTMLUListElement | null>(null)
-   useGSAP(() => {
-      const isMobile = window.innerWidth < 768
+   useGSAP(
+      () => {
+         const isMobile = window.innerWidth < 768
 
-      gsap.utils.toArray<HTMLElement>(".about-card").forEach((card, index) => {
-         const offset = isMobile ? 0 : index * 5
+         gsap.utils.toArray<HTMLElement>(".about-card").forEach((card, index) => {
+            const offset = isMobile ? 0 : index * 5
 
-         const tl = gsap.timeline({
-            scrollTrigger: {
-               trigger: card,
-               start: `top ${90 - offset}%`,
-               end: "bottom 10%",
-               scrub: 0.6,
-            },
-         })
+            const tl = gsap.timeline({
+               scrollTrigger: {
+                  trigger: card,
+                  start: `top ${90 - offset}%`,
+                  end: "bottom 10%",
+                  scrub: 0.6,
+               },
+            })
 
-         tl.fromTo(
-            card,
-            {
-               opacity: 0,
-               y: 60,
-            },
-            {
+            tl.fromTo(
+               card,
+               {
+                  opacity: 0,
+                  y: 60,
+               },
+               {
+                  opacity: 1,
+                  y: 0,
+                  ease: "power1.out",
+                  duration: 0.35,
+               },
+            )
+
+            tl.to(card, {
                opacity: 1,
                y: 0,
+               ease: "none",
+               duration: 0.3,
+            })
+
+            tl.to(card, {
+               opacity: 0,
+               y: -60,
                ease: "power1.out",
                duration: 0.35,
-            },
-         )
-
-         tl.to(card, {
-            opacity: 1,
-            y: 0,
-            ease: "none",
-            duration: 0.3,
+            })
          })
-
-         tl.to(card, {
-            opacity: 0,
-            y: -60,
-            ease: "power1.out",
-            duration: 0.35,
-         })
-      })
-   })
+      },
+      { scope: container },
+   )
    return (
       <section className="w-[var(--content-width)]">
          <ul ref={container} className="grid grid-cols-1 md:grid-cols-2 min-[1601px]:grid-cols-4! gap-8">
