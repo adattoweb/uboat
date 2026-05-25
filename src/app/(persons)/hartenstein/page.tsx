@@ -2,7 +2,7 @@
 
 import Constructor from "../page.constructor"
 
-import hartenstein from "@/assets/images/hartenstein.jpg"
+import hartenstein from "@/assets/images/hartenstein.png"
 import laconia from "@/assets/images/laconia.jpg"
 import blakeley from "@/assets/images/blakeley.jpg"
 
@@ -14,7 +14,7 @@ export default function Page() {
             height={400}
             src={hartenstein.src}
             alt="Werner Hartenstein"
-            className="float-left mb-2 mr-8"
+            className="lg:w-70 float-left lg:mr-8"
          />
          <Constructor.Introduction>THE COMMANDER OF U-156</Constructor.Introduction>
          <Constructor.Name className="whitespace-nowrap">WERNER HARTENSTEIN</Constructor.Name>
@@ -59,7 +59,7 @@ export default function Page() {
             height={400}
             src={blakeley.src}
             alt="Damaged Blakeley by U-156"
-            className="float-right mb-2 ml-8 mt-8 items-end"
+            className="float-right lg:w-80 lg:ml-8 lg:mt-8 items-end"
          />
          <Constructor.Header>The Laconia Incident</Constructor.Header>
          <Constructor.Paragraph>
@@ -96,7 +96,7 @@ export default function Page() {
             height={400}
             src={laconia.src}
             alt="The rescue operation for the Laconia survivors"
-            className="float-left mb-2 mr-8 mt-8"
+            className="float-left lg:w-90 lg:mr-8 lg:mt-8"
          />
          <Constructor.Header>Personality and Leadership</Constructor.Header>
          <Constructor.Paragraph>

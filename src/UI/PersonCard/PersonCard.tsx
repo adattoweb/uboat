@@ -23,7 +23,7 @@ function PersonCard({ className = "", children }: CardProps) {
             scrollTrigger: {
                trigger: card,
                start: "top 90%",
-               end: "bottom 15%",
+               end: "bottom 10%",
                scrub: 0.6,
             },
             defaults: {
@@ -31,10 +31,16 @@ function PersonCard({ className = "", children }: CardProps) {
             },
          })
 
-         tl.to(card, {
-            opacity: 1,
-            duration: 0.2,
-         })
+         tl.fromTo(
+            card,
+            {
+               opacity: 0,
+            },
+            {
+               opacity: 1,
+               duration: 0.2,
+            },
+         )
 
          tl.fromTo(
             portrait,
@@ -101,7 +107,7 @@ function PersonCard({ className = "", children }: CardProps) {
    })
    return (
       <section
-         className={`${styles.card} ${className} opacity-0 flex w-full h-auto min-[730px]:h-94 3xl:h-92 4xl:h-108! border border-[var(--stroke-color)] relative`}
+         className={`${styles.card} ${className} opacity-0 flex w-full h-auto min-[730px]:h-94 3xl:h-92 4xl:h-108! border border-[var(--stroke-color)]`}
       >
          <Image
             className={`${styles.eagle} hidden min-[730px]:block absolute opacity-0 mb-auto mt-14 lg:mt-10 3xl:mt-8! w-55 xl:w-60 3xl:w-70! 4xl:w-80!`}

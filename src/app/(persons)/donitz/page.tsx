@@ -14,7 +14,7 @@ export default function Page() {
             height={400}
             src={donitz4.src}
             alt="Karl Donitz"
-            className="float-left mb-2 mr-8"
+            className="float-left lg:mr-9"
          />
          <Constructor.Introduction>THE GRAND ADMIRAL</Constructor.Introduction>
          <Constructor.Name className="whitespace-nowrap inline">KARL DONITZ</Constructor.Name>
@@ -40,7 +40,7 @@ export default function Page() {
             height={400}
             src={donitz2.src}
             alt="Karl Dönitz shaking hands with sailors"
-            className="float-right mb-2 ml-8 mt-8 items-end"
+            className="float-right lg:ml-9 lg:mt-9 items-end"
          />
          <Constructor.Header>Commander of the U-boat Campaign</Constructor.Header>
          <Constructor.Paragraph>
@@ -95,7 +95,7 @@ export default function Page() {
             height={400}
             src={donitz5.src}
             alt="Karl Dönitz during the Nuremberg Trials"
-            className="float-left mb-2 mr-8 mt-8"
+            className="float-left lg:mr-9 lg:mt-9"
          />
          <Constructor.Header>Nuremberg Trial and Postwar Years</Constructor.Header>
          <Constructor.Paragraph>

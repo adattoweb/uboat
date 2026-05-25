@@ -3,7 +3,7 @@
 import PersonCard from "@/UI/PersonCard/PersonCard"
 
 import laconia from "@/assets/images/laconia.jpg"
-import hartenstein from "@/assets/images/hartenstein.png"
+import hartenstein from "@/assets/images/hartenstein_color.png"
 
 import Button from "@/UI/Button/Button"
 import styles from "@/UI/PersonCard/PersonCard.module.css"

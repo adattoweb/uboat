@@ -5,8 +5,8 @@ interface ConstructorProps extends WithClassName {
    children: React.ReactNode
 }
 
-function Constructor({ className, children }: ConstructorProps) {
-   return <div className={`${className} w-[var(--content-width)] mx-auto mt-40 `}>{children}</div>
+function Constructor({ className = "", children }: ConstructorProps) {
+   return <div className={`${className} w-[var(--content-width)] mx-auto mt-30 lg:mt-40`}>{children}</div>
 }
 
 interface ConstructorElement extends WithClassName {
@@ -22,10 +22,17 @@ interface PictureProps {
    alt: string
 }
 
-function Picture({ width, height, className, imageClassName, src, alt }: PictureProps) {
+function Picture({ width, height, className = "", imageClassName = "", src, alt }: PictureProps) {
    return (
-      <div className={`${className} flex flex-col gap-2 text-lg`}>
-         <Image width={width} height={height} src={src} alt={alt} className={`${imageClassName}`} />
+      <div className={`${className} flex flex-col gap-2 text-lg m-0 mb-6 mt-6 lg:mb-1 lg:mt-0`}>
+         <Image
+            width={width}
+            height={height}
+            src={src}
+            alt={alt}
+            className={`${imageClassName} w-300 lg:w-auto`}
+            draggable={false}
+         />
          <p className="text-light-gray">{alt}</p>
       </div>
    )
