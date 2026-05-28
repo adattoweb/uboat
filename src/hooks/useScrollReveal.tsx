@@ -16,7 +16,7 @@ type UseScrollRevealProps = {
 
 const defaultConfig: Config = {
    top: "90%",
-   bottom: "10%",
+   bottom: "5%",
    y: 60,
 }
 
