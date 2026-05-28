@@ -27,8 +27,8 @@ function Picture({ className = "", src, alt, style, data, setSelectedData, setIs
          <Image
             src={src}
             alt={alt}
-            width={768}
-            height={768}
+            width={1024}
+            height={1024}
             draggable={false}
             onClick={onClick}
             className={`
@@ -61,6 +61,7 @@ const areas = `
    "b9 b9 b9 b8 b8 b8"
    "c1 c1 c1 c2 c2 c2"
    "c1 c1 c1 c3 c3 c3"
+   "c4 c4 c4 c4 c4 c4"
 `
 
 export function Gallery() {

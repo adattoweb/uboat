@@ -29,6 +29,6 @@ export const about: IAboutCard[] = [
       description: "A collection of rare photos and documents from the U-boat era.",
       Icon: PhotoIcon,
       href: "#gallery",
-      image: "/images/uboat-2.png",
+      image: "/images/uboat-20.png",
    },
 ]
