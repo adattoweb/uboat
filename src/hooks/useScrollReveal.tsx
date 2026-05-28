@@ -2,20 +2,33 @@ import { RefObject } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
+interface Config {
+   top: string
+   bottom: string
+   y: number
+}
+
 type UseScrollRevealProps = {
    container: RefObject<HTMLElement | null>
    selector: string
+   config?: Config
 }
 
-export function useScrollReveal({ container, selector }: UseScrollRevealProps) {
+const defaultConfig: Config = {
+   top: "90%",
+   bottom: "10%",
+   y: 60,
+}
+
+export function useScrollReveal({ container, selector, config = defaultConfig }: UseScrollRevealProps) {
    useGSAP(
       () => {
          gsap.utils.toArray<HTMLElement>(selector).forEach(card => {
             const tl = gsap.timeline({
                scrollTrigger: {
                   trigger: card,
-                  start: "top 90%",
-                  end: "bottom 5%",
+                  start: `top ${config.top}`,
+                  end: `bottom ${config.bottom}`,
                   scrub: 0.6,
                },
             })
@@ -24,7 +37,7 @@ export function useScrollReveal({ container, selector }: UseScrollRevealProps) {
                card,
                {
                   opacity: 0,
-                  y: 60,
+                  y: config.y,
                },
                {
                   opacity: 1,
@@ -43,7 +56,7 @@ export function useScrollReveal({ container, selector }: UseScrollRevealProps) {
 
             tl.to(card, {
                opacity: 0,
-               y: -60,
+               y: -config.y,
                ease: "power1.out",
                duration: 0.35,
             })

@@ -64,7 +64,7 @@ export const pictures: PictureData[] = [
       source: "https://steamcommunity.com/sharedfiles/filedetails/?id=3477913290",
    },
    {
-      src: "/images/uboat-21.png",
+      src: "/images/uboat-10.png",
       name: "U-Boat Launching a Torpedo Underwater",
       author: "Grifter",
       description: null,
