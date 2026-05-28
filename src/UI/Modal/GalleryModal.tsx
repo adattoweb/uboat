@@ -1,7 +1,7 @@
 import { PictureData } from "@/constants/gallery"
 import Modal from "./Modal.constructor"
 import Image from "next/image"
-import Button from "@/UI/Button/Button"
+import Link from "next/link"
 
 interface GalleryModalProps {
    isOpen: boolean
@@ -16,15 +16,14 @@ export function GalleryModal({ isOpen, setIsOpen, selectedData }: GalleryModalPr
 
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
-         {/* <Modal.Cross onClose={onClose} /> */}
          <Image width={1024} height={1024} src={selectedData.src} alt="uboat image" className="" />
-         <div className="relative bottom-8 left-2">
-            <h2 className="text-xl text-gray-gradient">{selectedData.name}</h2>
-            <p>{selectedData.description}</p>
-            <p className="text-gray-gradient">Author: {selectedData.author}</p>
-            <Button href={selectedData.source} className="mt-4">
-               <Button.Text>Source</Button.Text>
-            </Button>
+         <div className="absolute box-border px-4 pb-4 bottom-2 flex flex-col text-light-gray text-base">
+            <h2 className="text-2xl font-semibold text-gray-gradient">{selectedData.name.toUpperCase()}</h2>
+            <p className="mt-0.5">{selectedData.description}</p>
+            <p>Author: {selectedData.author}</p>
+            <Link href={selectedData.source} target="_blank" className="underline underline-offset-2">
+               Source
+            </Link>
          </div>
       </Modal>
    )

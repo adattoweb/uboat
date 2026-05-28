@@ -2,7 +2,7 @@
 
 import { WithClassName } from "@/types/global"
 import Image from "next/image"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { PictureData, pictures } from "@/constants/gallery"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
 import { GalleryModal } from "@/UI/Modal/GalleryModal"
@@ -64,6 +64,21 @@ const areas = `
    "c4 c4 c4 c4 c4 c4"
 `
 
+const adaptiveAreas = `
+   "a1 a1 a1 a2 a2 a2"
+   "a3 a3 a4 a4 a4 a4"
+   "a5 a5 a6 a6 a7 a7"
+   "a8 a8 a9 a9 a7 a7"
+   "b1 b1 b1 b2 b2 b2"
+   "b1 b1 b1 b2 b2 b2"
+   "b3 b3 b4 b4 b5 b5"
+   "b6 b6 b7 b7 b7 b7"
+   "b8 b8 b8 b9 b9 b9"
+   "c1 c1 c1 c2 c2 c2"
+   "c1 c1 c1 c3 c3 c3"
+   "c4 c4 c4 c4 c4 c4"
+`
+
 export function Gallery() {
    const container = useRef<HTMLDivElement | null>(null)
 
@@ -74,13 +89,29 @@ export function Gallery() {
 
    const [selectedData, setSelectedData] = useState<PictureData | null>(null)
    const [isOpen, setIsOpen] = useState(false)
+
+   const [currentAreas, setCurrentAreas] = useState(areas)
+
+   useEffect(() => {
+      const handleResize = () => {
+         setCurrentAreas(window.innerWidth < 1280 ? adaptiveAreas : areas)
+      }
+
+      handleResize()
+
+      window.addEventListener("resize", handleResize)
+
+      return () => window.removeEventListener("resize", handleResize)
+   }, [])
+
    return (
       <div
          ref={container}
-         style={{ gridTemplateAreas: areas }}
-         className="w-[var(--content-width)] grid grid-cols-6 auto-rows-[300px] gap-6"
+         style={{ gridTemplateAreas: currentAreas }}
+         className="w-[var(--content-width)] flex flex-col sm:grid grid-cols-6 auto-rows-[160px] md:auto-rows-[240px] xl:auto-rows-[300px] gap-4 sm:gap-2 md:gap-4 xl:gap-6"
       >
          <GalleryModal isOpen={isOpen} setIsOpen={setIsOpen} selectedData={selectedData} />
+
          {pictures.map((picture, index) => {
             const row = String.fromCharCode(97 + Math.floor(index / 9))
             const column = (index % 9) + 1
