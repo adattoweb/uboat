@@ -18,8 +18,8 @@ export function GalleryModal({ isOpen, setIsOpen, selectedData }: GalleryModalPr
       <Modal isOpen={isOpen} onClose={onClose}>
          <Image width={1024} height={1024} src={selectedData.src} alt="uboat image" className="" />
          <div className="absolute box-border px-4 pb-4 bottom-2 flex flex-col text-light-gray text-base">
-            <h2 className="text-2xl font-semibold text-gray-gradient">{selectedData.name.toUpperCase()}</h2>
-            <p className="mt-0.5">{selectedData.description}</p>
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-gradient">{selectedData.name.toUpperCase()}</h2>
+            <p className="md:mt-0.5">{selectedData.description}</p>
             <p>Author: {selectedData.author}</p>
             <Link href={selectedData.source} target="_blank" className="underline underline-offset-2">
                Source

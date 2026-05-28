@@ -14,10 +14,10 @@ function Modal({ children, isOpen, onClose, className = "" }: ModalProps) {
 
    return createPortal(
       <>
-         <div className="w-screen h-screen fixed inset-0 bg-black/20 backdrop-blur-xs z-10" onClick={onClose} />
+         <div className="w-screen h-screen fixed inset-0 bg-black/20 backdrop-blur-xs" onClick={onClose} />
 
          <div
-            className={`${className} w-200 fixed center gray-gradient border border-[var(--stroke-color)] box-border z-20`}
+            className={`${className} w-[var(--content-width)] md:w-170 xl:w-200 fixed center gray-gradient border border-[var(--stroke-color)] box-border`}
             onClick={e => e.stopPropagation()}
          >
             {children}
