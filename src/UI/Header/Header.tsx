@@ -5,7 +5,7 @@ import { Navigation } from "./Navigation"
 
 export function Header() {
    return (
-      <header className="absolute bg-linear-to-b from-[#06172061] to-transparent w-screen py-6.5 flex items-center z-1">
+      <header className="absolute bg-linear-to-b from-[#06172061] to-transparent w-screen py-6.5 flex items-center z-12">
          <div className="w-[var(--content-width)] mx-auto flex justify-center sm:justify-start">
             <h1 className="text-3xl font-medium text-white hidden md:block">{APP.NAME}</h1>
             <Navigation />

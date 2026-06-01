@@ -4,7 +4,7 @@ export const submarines: Submarine[] = [
    {
       name: "TYPE IIC",
       preview: "/images/type2c.png",
-      images: [],
+      images: ["/images/u-23wb.jpg", "/images/blueprint-2c.png"],
       description: "Small coastal U-boat designed for short-range patrols and training missions.",
       content: {
          Torpedoes: "5",
@@ -22,7 +22,12 @@ export const submarines: Submarine[] = [
    {
       name: "TYPE VIIC",
       preview: "/images/type7c.png",
-      images: [],
+      images: [
+         "/images/blueprint-7c-1.png",
+         "/images/blueprint-7c-2.png",
+         "/images/blueprint-7c-3.png",
+         "/images/blueprint-7c-4.png",
+      ],
       description: "The main combat U-boat of the Kriegsmarine, used extensively in the Battle of the Atlantic.",
       content: {
          Torpedoes: "14",
@@ -40,7 +45,7 @@ export const submarines: Submarine[] = [
    {
       name: "TYPE VIIC/42",
       preview: "/images/type7c42.png",
-      images: [],
+      images: ["/images/7c42-1.png", "/images/7c42-2.png"],
       description:
          "An improved VIIC design with stronger hull protection and better survivability, though never completed.",
       content: {
@@ -59,7 +64,7 @@ export const submarines: Submarine[] = [
    {
       name: "TYPE XXI",
       preview: "/images/type21.png",
-      images: [],
+      images: ["/images/blueprint-21-1.png", "/images/blueprint-21-2.png"],
       description: "A revolutionary electro-boat designed for high underwater speed and long submerged operations.",
       content: {
          Torpedoes: "23",

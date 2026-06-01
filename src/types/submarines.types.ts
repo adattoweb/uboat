@@ -1,4 +1,4 @@
-interface SubmarineContent {
+export interface SubmarineContent {
    Torpedoes: string
    "Torpedo Tubes": string
    Length: string

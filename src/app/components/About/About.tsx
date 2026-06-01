@@ -32,13 +32,13 @@ export function About() {
          const isMobile = window.innerWidth < 768
 
          gsap.utils.toArray<HTMLElement>(".about-card").forEach((card, index) => {
-            const offset = isMobile ? 0 : index * 5
+            // const offset = isMobile ? 0 : index * 5
 
             const tl = gsap.timeline({
                scrollTrigger: {
                   trigger: card,
-                  start: `top ${90 - offset}%`,
-                  end: "bottom 10%",
+                  start: `top 90%`,
+                  end: "bottom 5%",
                   scrub: 0.6,
                },
             })
@@ -66,7 +66,8 @@ export function About() {
 
             tl.to(card, {
                opacity: 0,
-               y: -60,
+               y: -30,
+               scale: 0.95,
                ease: "power1.out",
                duration: 0.35,
             })

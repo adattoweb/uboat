@@ -18,7 +18,7 @@ export function Technology() {
             scrollTrigger: {
                trigger: container.current,
                start: "top 90%",
-               end: "bottom 10%",
+               end: "bottom 5%",
                scrub: 0.4,
             },
             defaults: {
@@ -65,7 +65,7 @@ export function Technology() {
 
          tl.to(container.current, {
             opacity: 0,
-            y: -60,
+            y: -30,
             duration: 0.5,
          })
       },

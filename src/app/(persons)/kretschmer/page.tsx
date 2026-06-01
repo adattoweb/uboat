@@ -4,7 +4,6 @@ import Constructor from "../page.constructor"
 
 import kretschmer from "@/assets/images/kretschmer.jpg"
 import kretschmer2 from "@/assets/images/kretschmer2.jpg"
-import u23 from "@/assets/images/u-23wb.jpg"
 
 export default function Page() {
    return (
@@ -41,7 +40,7 @@ export default function Page() {
          <Constructor.Picture
             width={400}
             height={400}
-            src={u23.src}
+            src={"/images/u-23wb.jpg"}
             alt="A Type IIB U-boat similar to U-23"
             className="float-right mb-2 ml-8 mt-8 items-end"
          />
@@ -108,7 +107,7 @@ export default function Page() {
             height={400}
             src={kretschmer2.src}
             alt="Kretschmer receiving his Knight's Cross"
-            className="float-left mb-2 mr-8 mt-8"
+            className="float-leftmb-2 mr-8 mt-8"
          />
          <Constructor.Header>Postwar Life and Later Career</Constructor.Header>
          <Constructor.Paragraph>

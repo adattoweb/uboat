@@ -59,13 +59,13 @@ function Modal({ children, isOpen, onClose, className = "" }: ModalProps) {
       <>
          <div
             ref={overlayRef}
-            className="fixed inset-0 hidden h-screen w-screen bg-black/20 opacity-0 backdrop-blur-xs"
+            className="fixed inset-0 hidden h-screen w-screen bg-black/20 opacity-0 backdrop-blur-xs z-10"
             onClick={onClose}
          />
 
          <div
             ref={modalRef}
-            className={`${className} fixed center hidden box-border w-[var(--content-width)] border border-[var(--stroke-color)] opacity-0 gray-gradient md:w-170 xl:w-200`}
+            className={`${className} fixed center hidden box-border w-[var(--content-width)] border border-[var(--stroke-color)] opacity-0 gray-gradient md:w-170 xl:w-200 z-11`}
             onClick={e => e.stopPropagation()}
          >
             {children}

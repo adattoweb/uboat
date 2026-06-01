@@ -109,6 +109,7 @@ export function Gallery() {
          ref={container}
          style={{ gridTemplateAreas: currentAreas }}
          className="w-[var(--content-width)] flex flex-col sm:grid grid-cols-6 auto-rows-[160px] md:auto-rows-[240px] xl:auto-rows-[300px] gap-4 sm:gap-2 md:gap-4 xl:gap-6"
+         id="gallery"
       >
          <GalleryModal isOpen={isOpen} setIsOpen={setIsOpen} selectedData={selectedData} />
 

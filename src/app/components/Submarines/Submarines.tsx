@@ -10,26 +10,31 @@ import Image from "next/image"
 import { useRef, useState } from "react"
 import { TypeModal } from "@/UI/Modal/TypeModal"
 
-type CardProps = Omit<Submarine, "images" | "content">
+interface CardProps {
+   data: Submarine
+   setSelectedData: React.Dispatch<React.SetStateAction<Submarine | null>>
+   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-function Card({ name, description, preview }: CardProps) {
+function Card({ data, setSelectedData, setIsOpen }: CardProps) {
+   const onSelect = () => {
+      setSelectedData(data)
+      setIsOpen(true)
+   }
    return (
-      <div
-         id="types"
-         className="sub-card opacity-0 flex flex-col h-100 3xl:h-100 flex-1 border border-[var(--stroke-color)]"
-      >
+      <div className="sub-card opacity-0 flex flex-col h-100 3xl:h-100 flex-1 border border-[var(--stroke-color)]">
          <Image
             width={400}
             height={300}
-            src={preview}
-            alt={`image of uboat ${name}`}
+            src={data.preview}
+            alt={`image of uboat ${data.name}`}
             className="w-full h-52 min-h-52 object-cover"
             draggable={false}
          />
          <div className="relative flex flex-col items-center bottom-8 w-full h-full px-6">
-            <h3 className="text-lg md:text-xl font-medium text-white">{name}</h3>
-            <p className="mt-3 md:mt-5 text-light-gray text-base">{description}</p>
-            <Button className="mt-auto">
+            <h3 className="text-lg md:text-xl font-medium text-white">{data.name}</h3>
+            <p className="mt-3 md:mt-5 text-light-gray text-base">{data.description}</p>
+            <Button className="mt-auto" onClick={onSelect}>
                <Button.Text>MORE</Button.Text>
             </Button>
          </div>
@@ -95,9 +100,10 @@ export function Submarines() {
       <section
          ref={container}
          className="w-[var(--content-width)] h-max grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4! gap-8"
+         id="types"
       >
-         {submarines.map((card, index) => (
-            <Card key={index} name={card.name} description={card.description} preview={card.preview} />
+         {submarines.map((data, index) => (
+            <Card key={index} data={data} setSelectedData={setSelectedData} setIsOpen={setIsOpen} />
          ))}
          <TypeModal isOpen={isOpen} setIsOpen={setIsOpen} selectedData={selectedData} />
       </section>
