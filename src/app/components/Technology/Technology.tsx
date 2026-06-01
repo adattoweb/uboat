@@ -17,8 +17,8 @@ export function Technology() {
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: container.current,
-               start: "top 85%",
-               end: "bottom 5%",
+               start: "top 90%",
+               end: "bottom 10%",
                scrub: 0.4,
             },
             defaults: {
@@ -66,7 +66,7 @@ export function Technology() {
          tl.to(container.current, {
             opacity: 0,
             y: -60,
-            duration: 0.7,
+            duration: 0.5,
          })
       },
       { scope: container },

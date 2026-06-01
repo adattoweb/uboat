@@ -1,5 +1,9 @@
+"use client"
+
+import { useGSAP } from "@gsap/react"
 import { XMarkIcon } from "@heroicons/react/24/outline"
-import { ReactNode } from "react"
+import gsap from "gsap"
+import { ReactNode, useRef } from "react"
 import { createPortal } from "react-dom"
 
 interface ModalProps {
@@ -10,14 +14,58 @@ interface ModalProps {
 }
 
 function Modal({ children, isOpen, onClose, className = "" }: ModalProps) {
-   if (!isOpen) return null
+   const overlayRef = useRef<HTMLDivElement | null>(null)
+   const modalRef = useRef<HTMLDivElement | null>(null)
+
+   useGSAP(
+      () => {
+         if (!overlayRef.current || !modalRef.current) return
+
+         if (isOpen) {
+            gsap.set([overlayRef.current, modalRef.current], {
+               display: "block",
+            })
+
+            gsap.to(overlayRef.current, {
+               opacity: 1,
+               duration: 0.25,
+            })
+
+            gsap.to(modalRef.current, {
+               opacity: 1,
+               duration: 0.3,
+            })
+         } else {
+            gsap.to(modalRef.current, {
+               opacity: 0,
+               duration: 0.25,
+            })
+
+            gsap.to(overlayRef.current, {
+               opacity: 0,
+               duration: 0.25,
+               onComplete: () => {
+                  gsap.set([overlayRef.current, modalRef.current], {
+                     display: "none",
+                  })
+               },
+            })
+         }
+      },
+      { dependencies: [isOpen] },
+   )
 
    return createPortal(
       <>
-         <div className="w-screen h-screen fixed inset-0 bg-black/20 backdrop-blur-xs" onClick={onClose} />
+         <div
+            ref={overlayRef}
+            className="fixed inset-0 hidden h-screen w-screen bg-black/20 opacity-0 backdrop-blur-xs"
+            onClick={onClose}
+         />
 
          <div
-            className={`${className} w-[var(--content-width)] md:w-170 xl:w-200 fixed center gray-gradient border border-[var(--stroke-color)] box-border`}
+            ref={modalRef}
+            className={`${className} fixed center hidden box-border w-[var(--content-width)] border border-[var(--stroke-color)] opacity-0 gray-gradient md:w-170 xl:w-200`}
             onClick={e => e.stopPropagation()}
          >
             {children}
@@ -32,7 +80,7 @@ interface CrossProps {
 }
 
 function Cross({ onClose }: CrossProps) {
-   return <XMarkIcon onClick={onClose} className="w-7 absolute right-2 top-2 stroke-white cursor-pointer" />
+   return <XMarkIcon onClick={onClose} className="absolute top-2 right-2 w-7 cursor-pointer stroke-white" />
 }
 
 Modal.Cross = Cross

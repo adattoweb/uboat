@@ -5,11 +5,14 @@ import { useGSAP } from "@gsap/react"
 
 import Button from "@/UI/Button/Button"
 import { submarines } from "@/constants/submarines"
-import { ISubmarineCard } from "@/types/submarines.types"
+import { Submarine } from "@/types/submarines.types"
 import Image from "next/image"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import { TypeModal } from "@/UI/Modal/TypeModal"
 
-function Card({ title, description, href, image }: ISubmarineCard) {
+type CardProps = Omit<Submarine, "images" | "content">
+
+function Card({ name, description, preview }: CardProps) {
    return (
       <div
          id="types"
@@ -18,15 +21,15 @@ function Card({ title, description, href, image }: ISubmarineCard) {
          <Image
             width={400}
             height={300}
-            src={image}
-            alt={`image of uboat ${title}`}
+            src={preview}
+            alt={`image of uboat ${name}`}
             className="w-full h-52 min-h-52 object-cover"
             draggable={false}
          />
          <div className="relative flex flex-col items-center bottom-8 w-full h-full px-6">
-            <h3 className="text-lg md:text-xl font-medium text-white">{title}</h3>
+            <h3 className="text-lg md:text-xl font-medium text-white">{name}</h3>
             <p className="mt-3 md:mt-5 text-light-gray text-base">{description}</p>
-            <Button className="mt-auto" href={href}>
+            <Button className="mt-auto">
                <Button.Text>MORE</Button.Text>
             </Button>
          </div>
@@ -36,6 +39,11 @@ function Card({ title, description, href, image }: ISubmarineCard) {
 
 export function Submarines() {
    const container = useRef<HTMLDivElement | null>(null)
+
+   const [isOpen, setIsOpen] = useState(false)
+
+   const [selectedData, setSelectedData] = useState<Submarine | null>(null)
+
    useGSAP(
       () => {
          const isMobile = window.innerWidth < 768
@@ -89,8 +97,9 @@ export function Submarines() {
          className="w-[var(--content-width)] h-max grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4! gap-8"
       >
          {submarines.map((card, index) => (
-            <Card key={index} title={card.title} description={card.description} href={card.href} image={card.image} />
+            <Card key={index} name={card.name} description={card.description} preview={card.preview} />
          ))}
+         <TypeModal isOpen={isOpen} setIsOpen={setIsOpen} selectedData={selectedData} />
       </section>
    )
 }
