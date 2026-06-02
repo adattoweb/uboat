@@ -17,12 +17,11 @@ function PersonCard({ className = "", children }: CardProps) {
          const portrait = card.querySelector(`.${styles.portrait}`)
          const eagle = card.querySelector(`.${styles.eagle}`)
          const texts = card.querySelectorAll(".person-gsap")
-         const button = card.querySelector(".person-button")
 
          const tl = gsap.timeline({
             scrollTrigger: {
                trigger: card,
-               start: "top 90%",
+               start: "top 95%",
                end: "bottom 10%",
                scrub: 0.6,
             },
@@ -38,7 +37,7 @@ function PersonCard({ className = "", children }: CardProps) {
             },
             {
                opacity: 1,
-               duration: 0.2,
+               duration: 0.1,
             },
          )
 
@@ -51,7 +50,7 @@ function PersonCard({ className = "", children }: CardProps) {
             {
                y: 0,
                opacity: 1,
-               duration: 0.4,
+               duration: 0.2,
             },
          )
 
@@ -64,7 +63,7 @@ function PersonCard({ className = "", children }: CardProps) {
             {
                y: 0,
                opacity: 0.1,
-               duration: 0.4,
+               duration: 0.2,
             },
             "<0.1",
          )
@@ -72,36 +71,22 @@ function PersonCard({ className = "", children }: CardProps) {
          tl.fromTo(
             texts,
             {
-               y: 40,
+               y: 20,
                opacity: 0,
             },
             {
                y: 0,
                opacity: 1,
-               stagger: 0.2,
-               duration: 0.4,
+               stagger: 0.1,
+               duration: 0.1,
             },
             "<0.1",
          )
 
-         tl.fromTo(
-            button,
-            {
-               opacity: 0,
-               y: 20,
-            },
-            {
-               opacity: 1,
-               y: 0,
-               duration: 0.3,
-            },
-            "<0.6",
-         )
-
          tl.to(card, {
             opacity: 0,
-            y: -40,
-            duration: 0.6,
+            y: -20,
+            duration: 0.3,
          })
       })
    })

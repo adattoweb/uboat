@@ -25,7 +25,7 @@ export function Donitz() {
                Hitler’s death, he briefly led Germany during the final days of the war and oversaw the process of
                Germany’s surrender in WWII.
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-button opacity-0`} href="/donitz">
+            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-gsap opacity-0`} href="/donitz">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>

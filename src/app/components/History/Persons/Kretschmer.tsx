@@ -24,7 +24,7 @@ export function Kretschmer() {
                of over 270,000 tons — the highest of any submariner. He became known for his precise and efficient
                tactics, often described as “one torpedo — one ship.”
             </PersonCard.Description>
-            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-button opacity-0`} href="/kretschmer">
+            <Button className={`${styles.button} mt-6 xl:mt-8 3xl:mt-10 person-gsap opacity-0`} href="/kretschmer">
                <Button.Text>LEARN MORE</Button.Text>
             </Button>
          </PersonCard.Text>
