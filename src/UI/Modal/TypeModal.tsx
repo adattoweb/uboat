@@ -21,7 +21,7 @@ export function TypeModal({ isOpen, setIsOpen, selectedData }: TypeModalProps) {
                <h2 className="text-xl md:text-2xl font-semibold text-gray-gradient">
                   {selectedData.name.toUpperCase()}
                </h2>
-               <p className="md:mt-0.5">{selectedData.description}</p>
+               <p className="hidden sm:block md:mt-0.5">{selectedData.description}</p>
             </div>
          </div>
          <ul className="columns-2 pt-2 pb-4 pr-4">

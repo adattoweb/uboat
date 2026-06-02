@@ -22,7 +22,7 @@ export function GalleryModal({ isOpen, setIsOpen, selectedData }: GalleryModalPr
                {selectedData.name.toUpperCase()}
             </h2>
             <p className="md:mt-0.5">{selectedData.description}</p>
-            <p>Author: {selectedData.author}</p>
+            <p className="hidden sm:block">Author: {selectedData.author}</p>
             <Link href={selectedData.source} target="_blank" className="underline underline-offset-2">
                Source
             </Link>
