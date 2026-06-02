@@ -17,7 +17,7 @@ export default function Page() {
             className="lg:w-70 float-left lg:mr-8"
          />
          <Constructor.Introduction>THE COMMANDER OF U-156</Constructor.Introduction>
-         <Constructor.Name className="whitespace-nowrap">WERNER HARTENSTEIN</Constructor.Name>
+         <Constructor.Name>WERNER HARTENSTEIN</Constructor.Name>
          <Constructor.Paragraph>
             Werner Hartenstein (1908–1943) was a German U-boat commander remembered both as a highly capable submarine
             officer and as one of the most controversial humanitarian figures of the Battle of the Atlantic. Best known

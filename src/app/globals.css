@@ -14,9 +14,10 @@
    --background-color: #061720;
 }
 
-/* html {
-   scroll-behavior: smooth;
-} */
+html {
+   /* scroll-behavior: smooth; */
+   overflow-x: hidden;
+}
 
 * {
    font-family: var(--font-source-serif);

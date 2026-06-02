@@ -16,7 +16,7 @@ export default function Page() {
             className="float-left mb-2 mr-8"
          />
          <Constructor.Introduction>THE ACE OF THE ATLANTIC</Constructor.Introduction>
-         <Constructor.Name className="whitespace-nowrap">OTTO KRETSCHMER</Constructor.Name>
+         <Constructor.Name>OTTO KRETSCHMER</Constructor.Name>
          <Constructor.Paragraph>
             Otto Kretschmer (1912–1998) was Germany’s most successful U-boat commander of World War II – a calm,
             calculating naval officer whose stealth tactics and ruthless efficiency earned him the nickname “The Silent

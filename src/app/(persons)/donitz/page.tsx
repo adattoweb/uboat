@@ -17,7 +17,7 @@ export default function Page() {
             className="float-left lg:mr-9"
          />
          <Constructor.Introduction>THE GRAND ADMIRAL</Constructor.Introduction>
-         <Constructor.Name className="whitespace-nowrap inline">KARL DONITZ</Constructor.Name>
+         <Constructor.Name>KARL DONITZ</Constructor.Name>
          <Constructor.Paragraph>
             Karl Dönitz (1891–1980) was a disciplined German admiral who transformed the Nazi U-boat arm into a powerful
             “wolfpack,” sank thousands of Allied ships in the Atlantic, and briefly led Germany after Hitler’s death – a

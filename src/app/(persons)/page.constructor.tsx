@@ -51,7 +51,7 @@ function Introduction({ className = "", children }: ConstructorElement) {
 }
 
 function Name({ className = "", children }: ConstructorElement) {
-   return <h1 className={`${className} text-gray-gradient text-5xl font-semibold`}>{children}</h1>
+   return <h1 className={`${className} text-gray-gradient text-5xl font-semibold inline`}>{children}</h1>
 }
 
 Constructor.Name = Name
