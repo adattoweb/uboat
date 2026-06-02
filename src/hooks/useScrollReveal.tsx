@@ -2,33 +2,32 @@ import { RefObject } from "react"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 
-interface Config {
-   top: string
-   bottom: string
+export class ScrollConfig {
+   top: number
+   bottom: number
    y: number
+   withOffset: boolean
+
+   constructor(top: number = 90, bottom: number = 5, y: number = 60, withOffset: boolean = false) {
+      this.top = top
+      this.bottom = bottom
+      this.y = y
+      this.withOffset = withOffset
+   }
 }
 
-type UseScrollRevealProps = {
-   container: RefObject<HTMLElement | null>
-   selector: string
-   config?: Config
-}
-
-const defaultConfig: Config = {
-   top: "90%",
-   bottom: "5%",
-   y: 60,
-}
-
-export function useScrollReveal({ container, selector, config = defaultConfig }: UseScrollRevealProps) {
+export function useScrollReveal(container: RefObject<HTMLElement | null>, selector: string, config: ScrollConfig) {
    useGSAP(
       () => {
-         gsap.utils.toArray<HTMLElement>(selector).forEach(card => {
+         const isMobile = window.innerWidth < 768
+         gsap.utils.toArray<HTMLElement>(selector).forEach((card, index) => {
+            const offset = isMobile ? 0 : index * 5
+            const top = config.withOffset ? config.top - offset : config.top
             const tl = gsap.timeline({
                scrollTrigger: {
                   trigger: card,
-                  start: `top ${config.top}`,
-                  end: `bottom ${config.bottom}`,
+                  start: `top ${top}%`,
+                  end: `bottom ${config.bottom}%`,
                   scrub: 0.6,
                },
             })
@@ -56,7 +55,7 @@ export function useScrollReveal({ container, selector, config = defaultConfig }:
 
             tl.to(card, {
                opacity: 0,
-               y: -config.y,
+               y: -config.y / 2,
                ease: "power1.out",
                duration: 0.35,
             })

@@ -4,7 +4,7 @@ import { WithClassName } from "@/types/global"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { PictureData, pictures } from "@/constants/gallery"
-import { useScrollReveal } from "@/hooks/useScrollReveal"
+import { ScrollConfig, useScrollReveal } from "@/hooks/useScrollReveal"
 import { GalleryModal } from "@/UI/Modal/GalleryModal"
 
 interface PictureProps extends WithClassName {
@@ -82,10 +82,8 @@ const adaptiveAreas = `
 export function Gallery() {
    const container = useRef<HTMLDivElement | null>(null)
 
-   useScrollReveal({
-      container,
-      selector: ".gallery-picture",
-   })
+   const config = new ScrollConfig(95, 2, 60, false)
+   useScrollReveal(container, ".gallery-picture", config)
 
    const [selectedData, setSelectedData] = useState<PictureData | null>(null)
    const [isOpen, setIsOpen] = useState(false)

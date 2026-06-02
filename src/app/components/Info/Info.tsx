@@ -1,12 +1,10 @@
 "use client"
 
-import gsap from "gsap"
-import { useGSAP } from "@gsap/react"
-
 import { WithClassName } from "@/types/global"
 import { AnchorIcon, SubmarineIcon } from "@/UI/icons/Icons"
 import { CalendarDaysIcon, FlagIcon, UserIcon } from "@heroicons/react/24/outline"
 import { useRef } from "react"
+import { ScrollConfig, useScrollReveal } from "@/hooks/useScrollReveal"
 
 // fill-[rgba(var(--accent-stroke-color),0.9)]
 // stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2
@@ -33,51 +31,8 @@ function Card({ children, className, header, title, description }: CardProps) {
 
 export function Info() {
    const container = useRef<HTMLDivElement | null>(null)
-   useGSAP(
-      () => {
-         const isMobile = window.innerWidth < 768
-
-         gsap.utils.toArray<HTMLElement>(".info-card").forEach((card, index) => {
-            const offset = isMobile ? 0 : index * 5
-
-            const tl = gsap.timeline({
-               scrollTrigger: {
-                  trigger: card,
-                  start: `top ${90 - offset}%`,
-                  end: "bottom 10%",
-                  scrub: 0.6,
-               },
-            })
-
-            tl.fromTo(
-               card,
-               {
-                  opacity: 0,
-                  y: 60,
-               },
-               {
-                  opacity: 1,
-                  y: 0,
-                  ease: "power1.out",
-                  duration: 0.35,
-               },
-            )
-            tl.to(card, {
-               opacity: 1,
-               y: 0,
-               ease: "none",
-               duration: 0.3,
-            })
-            tl.to(card, {
-               opacity: 0,
-               y: -60,
-               ease: "power1.out",
-               duration: 0.35,
-            })
-         })
-      },
-      { scope: container },
-   )
+   const config = new ScrollConfig(95, 5, 30, true)
+   useScrollReveal(container, ".info-card", config)
    return (
       <section
          ref={container}
