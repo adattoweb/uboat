@@ -1,11 +1,11 @@
 "use client"
 
-import Link from "next/link"
 import { IAboutCard } from "@/types/about.types"
 import { about } from "@/constants/about"
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline"
 import { useRef } from "react"
 import { ScrollConfig, useScrollReveal } from "@/hooks/useScrollReveal"
+import { scrollTo } from "@/utils/scrollTo"
 
 function Card({ title, description, Icon, href, image }: IAboutCard) {
    // first:-... для іконки субмарини, вона повинна по іншому відображатись, тому для неї особливий підхід. Враховуй це, коли будеш змінювати іконку ( ! )
@@ -14,12 +14,12 @@ function Card({ title, description, Icon, href, image }: IAboutCard) {
          className="about-card flex h-100 opacity-0 bg-cover bg-center flex-1 first:fill-[rgba(var(--accent-stroke-color),0.9)] first:stroke-none! first:[&_.icon]:h-5 md:first:[&_.icon]:h-6 border border-[var(--stroke-color)]"
          style={{ backgroundImage: `url(${image})` }}
       >
-         <Link className="flex flex-col justify-end px-5 py-5 w-full h-full items-start" href={href} draggable={false}>
+         <div className="flex flex-col justify-end px-5 py-5 w-full h-full items-start" onClick={() => scrollTo(href)}>
             <Icon className="icon h-6 md:h-8 stroke-[rgba(var(--accent-stroke-color),0.9)] stroke-2" />
             <h4 className="mt-1 text-lg md:text-xl font-medium text-white">{title}</h4>
             <p className="mt-1 md:mt-1.5 text-light-gray text-sm md:text-base font-normal">{description}</p>
             <ArrowLongRightIcon className="mt-6 md:mt-8 w-8 md:w-10 stroke-[rgba(var(--accent-stroke-color),0.9)]" />
-         </Link>
+         </div>
       </li>
    )
 }

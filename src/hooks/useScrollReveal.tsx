@@ -28,7 +28,7 @@ export function useScrollReveal(container: RefObject<HTMLElement | null>, select
                   trigger: card,
                   start: `top ${top}%`,
                   end: `bottom ${config.bottom}%`,
-                  scrub: 0.6,
+                  scrub: 0.8,
                },
             })
 

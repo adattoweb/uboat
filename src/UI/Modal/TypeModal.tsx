@@ -16,7 +16,7 @@ export function TypeModal({ isOpen, setIsOpen, selectedData }: TypeModalProps) {
    return (
       <Modal isOpen={isOpen} onClose={onClose}>
          <div className="relative">
-            <Image width={1024} height={1024} src={selectedData.preview} alt="uboat image" draggable={false} />
+            <Image width={800} height={500} src={selectedData.preview} alt="uboat image" draggable={false} />
             <div className="absolute box-border px-4 bottom-2 flex flex-col text-light-gray text-base">
                <h2 className="text-xl md:text-2xl font-semibold text-gray-gradient">
                   {selectedData.name.toUpperCase()}
@@ -34,7 +34,14 @@ export function TypeModal({ isOpen, setIsOpen, selectedData }: TypeModalProps) {
          <div className="columns-2 gap-3 p-6">
             {selectedData.images.map((src, index) => (
                <div key={index} className="break-inside-avoid mb-3">
-                  <Image src={src} width={720} height={720} alt={`Image of ${selectedData.name} U-Boat`} />
+                  <Image
+                     src={src}
+                     width={370}
+                     height={300}
+                     alt={`Image of ${selectedData.name} U-Boat`}
+                     draggable={false}
+                     className="max-w-92"
+                  />
                </div>
             ))}
          </div>

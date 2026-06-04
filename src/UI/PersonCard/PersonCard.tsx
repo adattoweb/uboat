@@ -23,7 +23,7 @@ function PersonCard({ className = "", children }: CardProps) {
                trigger: card,
                start: "top 95%",
                end: "bottom 10%",
-               scrub: 0.6,
+               scrub: 0.8,
             },
             defaults: {
                ease: "none",

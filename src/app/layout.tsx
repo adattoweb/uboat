@@ -6,6 +6,7 @@ import { Footer } from "@/UI/Footer/Footer"
 import { LoadScreen } from "./components/LoadScreen/LoadScreen"
 import { GSAPProvider } from "./components/GSAPProvider/GSAPProvider"
 import { ScrollHeader } from "@/UI/ScrollHeader/ScrollHeader"
+import ScrollRestoration from "./components/ScrollRestoration/ScrollRestoration"
 
 const SourceSerif = Source_Serif_4({
    variable: "--font-source-serif",
@@ -27,7 +28,8 @@ export default function RootLayout({
          <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D] overflow-hidden">
             <LoadScreen />
             <Header />
-            {/* <ScrollHeader /> */}
+            <ScrollHeader />
+            <ScrollRestoration />
             <main className="flex-1 flex flex-col">
                <GSAPProvider>{children}</GSAPProvider>
             </main>

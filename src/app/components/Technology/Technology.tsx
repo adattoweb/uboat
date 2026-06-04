@@ -19,7 +19,7 @@ export function Technology() {
                trigger: container.current,
                start: "top 90%",
                end: "bottom 5%",
-               scrub: 0.4,
+               scrub: 0.8,
             },
             defaults: {
                ease: "none",
