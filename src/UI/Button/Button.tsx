@@ -42,7 +42,11 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 function Text({ className = "", children }: WithClassName & { children?: React.ReactNode }) {
-   return <p className={`${className} text-[var(--accent-color)] text-base xl:text-lg mx-auto my-auto`}>{children}</p>
+   return (
+      <p className={`${className} text-[var(--accent-color)] text-base xl:text-lg mx-auto my-auto select-none`}>
+         {children}
+      </p>
+   )
 }
 
 Button.Text = Text

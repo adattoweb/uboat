@@ -7,6 +7,7 @@ import Button from "@/UI/Button/Button"
 import submarine from "@/assets/images/submarine.png"
 import Image from "next/image"
 import { useRef } from "react"
+import { scrollTo } from "@/utils/scrollTo"
 
 export function Technology() {
    const container = useRef<HTMLDivElement | null>(null)
@@ -63,11 +64,15 @@ export function Technology() {
             duration: 0.25,
          })
 
-         tl.to(container.current, {
-            opacity: 0,
-            y: -30,
-            duration: 0.5,
-         })
+         tl.to(
+            container.current,
+            {
+               opacity: 0,
+               y: -30,
+               duration: 0.5,
+            },
+            "+=1",
+         )
       },
       { scope: container },
    )
@@ -88,7 +93,7 @@ export function Technology() {
             <p className="tech-gsap opacity-0 text-base md:text-lg 4xl:text-xl text-light-gray font-normal mb-6">
                German U-boats were a result of engineering precision, innovation and ruthless efficiency.
             </p>
-            <Button ref={button} className="opacity-0">
+            <Button ref={button} className="opacity-0" onClick={() => scrollTo("#types")}>
                <Button.Text>VIEW IN DETAIL</Button.Text>
             </Button>
          </div>

@@ -1,6 +1,7 @@
 "use client"
 
 import Button from "@/UI/Button/Button"
+import { scrollTo } from "@/utils/scrollTo"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef } from "react"
@@ -18,13 +19,9 @@ export function Intro() {
             stagger: 0.3,
          })
 
-         tl.add(textTl).to(
-            ".button",
-            {
-               opacity: 1,
-            },
-            "+=2",
-         )
+         tl.add(textTl).to(".button", {
+            opacity: 1,
+         })
       },
       { scope: container },
    )
@@ -45,7 +42,7 @@ export function Intro() {
                   Explore the engineering, history and wartime legacy of Germany`s U-boats that changed the course of
                   naval warfare forever
                </p>
-               <Button className="button fade-in">
+               <Button className="button fade-in" onClick={() => scrollTo("#start")}>
                   <Button.Text>EXPLORE THE DEPTHS</Button.Text>
                </Button>
             </div>

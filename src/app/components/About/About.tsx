@@ -30,7 +30,7 @@ export function About() {
    config.withOffset = true
    useScrollReveal(container, ".about-card", config)
    return (
-      <section className="w-[var(--content-width)]">
+      <section className="w-[var(--content-width)]" id="start">
          <ul ref={container} className="grid grid-cols-1 md:grid-cols-2 min-[1601px]:grid-cols-4! gap-8">
             {about.map((card, index) => (
                <Card

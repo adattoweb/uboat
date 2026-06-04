@@ -83,11 +83,15 @@ function PersonCard({ className = "", children }: CardProps) {
             "<0.1",
          )
 
-         tl.to(card, {
-            opacity: 0,
-            y: -20,
-            duration: 0.3,
-         })
+         tl.to(
+            card,
+            {
+               opacity: 0,
+               y: -20,
+               duration: 0.3,
+            },
+            "+=1",
+         )
       })
    })
    return (

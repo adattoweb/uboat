@@ -24,23 +24,22 @@ export function TypeModal({ isOpen, setIsOpen, selectedData }: TypeModalProps) {
                <p className="hidden sm:block md:mt-0.5">{selectedData.description}</p>
             </div>
          </div>
-         <ul className="columns-2 pt-2 pb-4 pr-4">
+         <ul className="sm:columns-2 pt-2 pb-4 pr-4">
             {(Object.keys(selectedData.content) as Array<keyof SubmarineContent>).map((parameter, index) => (
                <li key={index} className="text-light-gray list-disc ml-8">
                   {parameter}: {selectedData.content[parameter]}
                </li>
             ))}
          </ul>
-         <div className="columns-2 gap-3 p-6">
+         <div className="sm:columns-2 gap-3 p-6">
             {selectedData.images.map((src, index) => (
-               <div key={index} className="break-inside-avoid mb-3">
+               <div key={index} className="break-inside-avoid mb-3 w-full max-w-92">
                   <Image
                      src={src}
                      width={370}
                      height={300}
                      alt={`Image of ${selectedData.name} U-Boat`}
                      draggable={false}
-                     className="max-w-92"
                   />
                </div>
             ))}

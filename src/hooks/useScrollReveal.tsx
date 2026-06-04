@@ -53,12 +53,16 @@ export function useScrollReveal(container: RefObject<HTMLElement | null>, select
                duration: 0.3,
             })
 
-            tl.to(card, {
-               opacity: 0,
-               y: -config.y / 2,
-               ease: "power1.out",
-               duration: 0.35,
-            })
+            tl.to(
+               card,
+               {
+                  opacity: 0,
+                  y: -config.y / 2,
+                  ease: "power1.out",
+                  duration: 0.35,
+               },
+               "+=1",
+            )
          })
       },
       {
