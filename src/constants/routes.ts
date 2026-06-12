@@ -5,19 +5,15 @@ interface IRoute {
 
 export const ROUTES: Record<string, IRoute> = {
    HOME: {
-      ROUTE: "/",
+      ROUTE: "#intro",
       NAME: "HOME",
    },
    TYPES: {
-      ROUTE: "/types",
+      ROUTE: "#types",
       NAME: "TYPE OF UBOATS",
    },
    HISTORY: {
-      ROUTE: "/history",
+      ROUTE: "#history",
       NAME: "HISTORY",
    },
-   // GALLERY: {
-   //    ROUTE: "/gallery",
-   //    NAME: "GALLERY",
-   // },
 }

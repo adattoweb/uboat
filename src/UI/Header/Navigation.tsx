@@ -1,4 +1,7 @@
+"use client"
+
 import { ROUTES } from "@/constants/routes"
+import { scrollTo } from "@/utils/scrollTo"
 import Link from "next/link"
 
 interface ItemProps extends React.PropsWithChildren {
@@ -7,7 +10,11 @@ interface ItemProps extends React.PropsWithChildren {
 
 function Item({ href, children }: ItemProps) {
    return (
-      <Link className="text-white text-sm min-[360px]:text-base font-normal" href={href}>
+      <Link
+         href={`/${href}`}
+         className="text-white text-sm min-[360px]:text-base font-normal cursor-pointer"
+         onClick={() => scrollTo(`${href}`)}
+      >
          {children}
       </Link>
    )

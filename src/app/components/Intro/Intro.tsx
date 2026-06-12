@@ -28,6 +28,7 @@ export function Intro() {
    return (
       <section
          ref={container}
+         id="intro"
          className="w-screen h-screen bg-[radial-gradient(circle_at_center,transparent,var(--background-color)_150%),url('/images/intro_background.png')] bg-cover bg-center flex"
       >
          <div className="w-[var(--content-width)] h-full mx-auto flex">
