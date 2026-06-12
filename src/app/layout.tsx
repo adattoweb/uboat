@@ -3,10 +3,10 @@ import { Source_Serif_4 } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/UI/Header/Header"
 import { Footer } from "@/UI/Footer/Footer"
-import { LoadScreen } from "./components/LoadScreen/LoadScreen"
 import { GSAPProvider } from "./components/GSAPProvider/GSAPProvider"
 import { ScrollHeader } from "@/UI/ScrollHeader/ScrollHeader"
 import ScrollRestoration from "./components/ScrollRestoration/ScrollRestoration"
+import { Analytics } from "@vercel/analytics/next"
 
 const SourceSerif = Source_Serif_4({
    variable: "--font-source-serif",
@@ -26,7 +26,8 @@ export default function RootLayout({
    return (
       <html lang="en" className={` ${SourceSerif.variable} h-full antialiased`}>
          <body className="min-h-full flex flex-col bg-linear-to-r from-[#06141C] to-[#06151D] overflow-hidden">
-            <LoadScreen />
+            {/* <LoadScreen /> */}
+            <Analytics />
             <Header />
             <ScrollHeader />
             <ScrollRestoration />
