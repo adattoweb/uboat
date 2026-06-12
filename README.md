@@ -7,3 +7,4 @@ The project explores the development of submarine warfare, presents information 
 The website features detailed descriptions of submarine types, historical articles, commander profiles, technical illustrations, image galleries, and statistical information related to submarine fleets around the world. Through a combination of modern web technologies, immersive visuals, and smooth animations, UBOATS provides an engaging way to discover one of the most fascinating chapters of naval history.
 
 You can test it: https://uboats.vercel.app/
+<img width="2048" height="1122" alt="зображення" src="https://github.com/user-attachments/assets/191fc4a6-c607-43d3-a571-2badcfb388f6" />
